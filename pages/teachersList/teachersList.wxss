@@ -1,0 +1,21 @@
+/* pages/teachersList/teachersList.wxss */
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20rpx 30rpx;
+    font-size: 28rpx;
+}
+.list{
+    width: 48%；
+}
+.list image{
+    display: block;
+    width: 330rpx;
+    height: 295rpx;
+}
+.list  view{
+    padding: 10rpx 0;
+    text-align: center;
+}

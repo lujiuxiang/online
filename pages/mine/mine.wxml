@@ -1,0 +1,48 @@
+<!--pages/mine/mine.wxml-->
+
+<!-- 登陆页面 start -->
+<view class='loginWrap' wx:if="{{!login}}">
+    <image src='{{title_img}}'></image>
+
+    <form bindsubmit="formSubmit">
+        <view><text>账号</text><input type='tel' name="user" placeholder='请输入注册的手机号'></input></view>
+        <view><text>密码</text><input type='password' name="password" placeholder='请输入密码'></input></view>
+
+        <button formType="submit">登 录</button>
+    </form>
+    <view class='others'>
+        <navigator url='../register/register'>立即注册</navigator>
+        <navigator url='../forgetPassword/forgetPassword'>忘记密码</navigator>
+    </view>
+</view>
+<!-- 登陆页面 end -->
+
+<!-- ------------------------------------------------------------------------------>
+
+<!-- 登陆成功之后 会员信息 -->
+
+<!-- 顶部 会员信息 start -->
+<view wx:if="{{login}}">
+    <view class='title' bindtap='goMyInfo'>
+        <image src='{{title_img}}'></image>
+        <view class='t_right'>
+            <view class='username'>{{username}}</view>
+            <view class='vip'>vip学员</view>
+            <text class='iconfont icon-youjiantou'></text>
+        </view>
+    </view>
+    <!-- 顶部 会员信息 end -->
+
+    <!-- 底部 列表 start -->
+    <view class='list'>
+        <block wx:for="{{list}}" wx:key="index">
+            <view bindtap='goSecondLevel' data-url="{{item.url}}" data-id="{{item.id}}">
+                <text class='{{item.icon}}' style='color: {{item.color}};'></text>
+                <text>{{item.text}}</text>
+                <text class='iconfont icon-youjiantou'></text>
+            </view>
+        </block>
+    </view>
+    <!-- 底部 列表 end -->
+</view>
+

@@ -1,0 +1,144 @@
+/* pages/classDetails/classDetails.wxss */
+
+/* 顶部视频 start */
+.videoWrap{
+    position: relative;
+}
+.myVideo{ 
+  width:100%;
+  height: calc(9 * 750rpx / 16);
+  background-color: #fff;
+}
+.controls{
+  position:absolute;
+  z-index:1; 
+  background-color: #fff;    
+   height: calc(9 * 750rpx / 16); 
+  margin-top:-430rpx;
+}
+.play{ 
+    position:absolute;
+    left:50%;
+    margin-top:-300rpx;
+    margin-left:-80rpx;    
+}
+/* 顶部视频 end */
+
+/* 内容部分 start */
+/* 课程名称 start */
+.content{
+    font-size: 24rpx;
+}
+.con_top{
+    padding: 10rpx 20rpx 20rpx;
+    border-bottom: 1px solid #ddd;
+}
+.con_top .kc_bg{
+    padding: 3rpx 8rpx;
+    margin-right: 20rpx;
+    color: #fff;
+    background-color: #22ac38;
+}
+.con_top .kc_title{
+    font-weight: bold;
+    font-size: 28rpx;
+}
+
+.con_top .class_bot{
+    padding-top: 10rpx;
+    color: #acaeb2;
+}
+.con_top .class_bot .rq{
+    float: right;
+}
+/* 课程名称 end */
+/* 讲师描述 start */
+.teachers_del_wrap{
+    text-align: center;
+    padding: 30rpx 0 10rpx;
+}
+.teachers_del_wrap .title{
+    font-size: 30rpx;
+}
+.teachers_del_wrap image{
+    margin: 10rpx 0;
+    width: 280rpx;
+    height: 250rpx;
+}
+.teachers_del_wrap .teacher_del{
+    padding: 0 50rpx;
+    text-align: left;
+    text-indent: 2em;
+}
+/* 讲师描述 end */
+/* 热门评论 start */
+.comment{
+    margin: 30rpx auto 100rpx;
+    width: 95%;
+    box-shadow: 0 0 10rpx #ddd;
+}
+.comment .co_title{
+    display: flex;
+    align-items: center;
+    padding: 10rpx 20rpx;
+    border-bottom: 1px solid #bbb;
+}
+.comment .co_title image{
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+.comment .co_title text:nth-of-type(1){
+    font-size: 30rpx;
+    flex: 1;
+}
+.comment .co_title .co_more{
+    padding: 10rpx;
+}
+/* 评论列表 start */
+.co_list > view{
+    display: flex;
+    align-items: flex-start;
+    padding: 15rpx 0;
+}
+.co_list image{
+    margin: 0 15rpx;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+.l_right{
+    flex: 1;
+}
+.l_right .username{
+    font-size: 32rpx;
+}
+.l_right .r_del{
+    margin-top: 6rpx;
+}
+.l_right .r_del .time{
+    padding-right: 20rpx;
+    color: #adafb2;
+    text-align: right;
+}
+/* 评论列表 end */
+/* 热门评论 end */
+/* 内容部分 end */
+
+/* 底部 会员申请 start */
+.Membership{
+    position: fixed;
+    bottom: 0;
+    padding: 6rpx 20rpx;
+    width: 95%;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    background-color: #fff;
+    text-align: center;
+}
+.Membership view{
+    border-radius: 10rpx;
+    background-color: #e60012;
+}
+/* 底部 会员申请 end */

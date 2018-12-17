@@ -1,0 +1,59 @@
+/* 课程列表 start */
+.class_list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.class_list image{
+    width: 150rpx;
+    height: 170rpx;
+}
+.class_list>view{
+    display: flex;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #ddd;
+}
+.class_list .c_l_right{
+    flex: 1;
+    padding-left: 10rpx;
+}
+.class_list .c_l_right .c_l_title{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.class_list .c_l_right .ddd{
+    position: relative;
+    margin-top: 12rpx;
+    color: #a3a3a3;
+    font-size: 26rpx;
+}
+.class_list .c_l_right .ddd text{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5rpx 20rpx;
+    color: #fff;
+    background-color: #ed03a2;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+}
+.class_list .c_l_right .text_hidden{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.index_class{
+    padding: 0 20rpx;
+}
+/* 课程列表 end */

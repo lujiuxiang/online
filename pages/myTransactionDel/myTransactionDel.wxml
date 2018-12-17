@@ -1,0 +1,16 @@
+<!--pages/myTransactionDel/myTransactionDel.wxml-->
+<view class='wrap'>
+    <view class='top'>
+        <image src='{{kc_img}}'></image>
+        <view class='right'>
+            <view class='title'>{{kcName}}</view>
+            <view class='del'>{{kcDel}}</view>
+        </view>
+    </view>
+
+    <view class='list'>
+        <view><text>交易金额</text><text class='right'>￥{{pay.money}}</text></view>
+        <view><text>交易时间</text><text class='right'>{{pay.time}}</text></view>
+        <view><text>交易方式</text><text class='right'>{{pay.type}}</text></view>
+    </view>
+</view>

@@ -1,0 +1,52 @@
+.container{
+    background-color: #f6f6f6;
+    flex-direction: normal;
+    justify-content: flex-start;
+}
+.wrap{
+    width: 95%;
+    font-size: 24rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    padding: 10rpx 20rpx;
+    color: #555454;
+    box-sizing: border-box;
+}
+.wrap .title{
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #000;
+}
+.wrap .title .pay{
+    display: inline-block;
+    margin-left: 20rpx;
+    padding: 0 10rpx;
+    font-size: 20rpx;
+    background-color: #eee;
+    font-weight: normal;
+    transform: skew(-30deg);
+}
+.wrap .title .pay text{
+    display: inline-block;
+    transform: skew(30deg);
+}
+
+.money{
+    padding: 10rpx 0;
+}
+
+.bot{
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+}
+.bot text{
+    flex: 1;
+}
+.bot view{
+    padding: 10rpx 20rpx;
+    color: #fff;
+    background-color: #e300be;
+    border-radius: 10rpx;
+}

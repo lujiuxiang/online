@@ -1,0 +1,103 @@
+.container{
+    display: block;
+    padding: 10rpx 20rpx;
+    background-color: #f6f6f6;
+    font-size: 24rpx;
+    height: auto;
+}
+.container > view{
+    border-radius: 10rpx;
+}
+
+/* 顶部 我的信息 start */
+.myInfo{
+    display: flex;
+    align-items: center;
+    padding: 40rpx 20rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.myInfo image{
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+.myInfo .right view{
+    padding: 5rpx 0;
+    color: #6e6e6e;
+    font-size: 28rpx;
+}
+/* 顶部 我的信息 end */
+
+/* 会员课程简介 start */
+.memberIntro{
+    margin-top: 10rpx;
+    background-color: #fff;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.memberIntro .title{
+    font-size: 28rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid #ddd;
+}
+.memberIntro .why_list{
+    padding-top: 10rpx;
+    color: #6e6e6e;
+}
+.result{
+    text-indent: 2em;
+    word-break: break-all;
+}
+/* 会员课程简介 end */
+
+
+
+/* 会员列表 start */
+.wrap{
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    padding: 10rpx 20rpx;
+    color: #555454;
+    box-sizing: border-box;
+}
+.wrap .title{
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #000;
+}
+.wrap .title .pay{
+    display: inline-block;
+    margin-left: 20rpx;
+    padding: 0 10rpx;
+    font-size: 20rpx;
+    background-color: #eee;
+    font-weight: normal;
+    transform: skew(-30deg);
+}
+.wrap .title .pay text{
+    display: inline-block;
+    transform: skew(30deg);
+}
+
+.money{
+    padding: 10rpx 0;
+}
+
+.bot{
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+}
+.bot text{
+    flex: 1;
+}
+.bot view{
+    padding: 10rpx 20rpx;
+    color: #fff;
+    background-color: #e300be;
+    border-radius: 10rpx;
+}
+/* 会员列表 end */

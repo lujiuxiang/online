@@ -1,0 +1,80 @@
+/* pages/classDetails/classDetails.wxss */
+
+/* 顶部视频 start */
+.videoWrap{
+    position: relative;
+}
+.myVideo{ 
+  width:100%;
+  height: calc(9 * 750rpx / 16);
+  background-color: #fff;
+}
+.controls{
+  position:absolute;
+  z-index:1; 
+  background-color: #fff;    
+   height: calc(9 * 750rpx / 16); 
+  margin-top:-430rpx;
+}
+.play{ 
+    position:absolute;
+    left:50%;
+    margin-top:-300rpx;
+    margin-left:-80rpx;    
+}
+/* 顶部视频 end */
+
+/* 内容部分 start */
+/* 课程信息 start */
+.content{
+    padding: 0 20rpx;
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+}
+.class_info > view{
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+}
+
+.class_info .iconfont{
+    margin-right: 10rpx;
+    font-size: 36rpx;
+}
+.pad10{
+    padding: 0 10rpx;
+}
+/* 课程信息 end */
+/* 讲师信息 start */
+.teacher_del image{
+    width: 100%;
+    height: 460rpx;
+}
+.teacher_del view{
+    text-indent: 2em;
+    line-height: 1.5;
+}
+
+/* 讲师信息 end */
+
+
+/* 内容部分 end */
+
+
+/* 底部 会员申请 start */
+.Membership{
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 10rpx;
+    width: 95%;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    background-color: #fff;
+    text-align: center;
+}
+.Membership view{
+    border-radius: 10rpx;
+    background-color: #e60012;
+}
+/* 底部 会员申请 end */

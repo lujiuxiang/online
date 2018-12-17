@@ -1,0 +1,54 @@
+<!--pages/classDetails/classDetails.wxml-->
+<!-- 顶部视频标签 start -->
+<view class='videoWrap'>
+    <video id="myVideo" class="myVideo" src="{{video_src}}" custom-cache="{{false}}">
+    </video>
+    <cover-view class="controls" style="display:{{tab_image}}; width:100%;">
+        <cover-image src="http://imyu.top/xcx/video_bg.png"  />
+    </cover-view>
+    <cover-view class="play" style="display:{{tab_image}};z-index:200;">
+        <cover-image bindtap="bindplay" src="http://imyu.top/xcx/video_play.png" style="width:160rpx;" />
+    </cover-view>
+</view>
+<!-- 顶部视频标签 end -->
+
+<!-- 内容部分 start -->
+<view class='content'>
+    <!-- 课程信息 start -->
+    <view class='class_info'>
+        <view>
+            <text class='iconfont icon-noun__cc'></text>
+            <text>{{starttime}}</text>
+            <text class='pad10'>至</text>
+            <text>{{endtime}}</text>
+        </view>
+        <view>
+            <text class='iconfont icon-dingwei'></text>
+            <text>{{addr}}</text>
+        </view>
+        <view>
+            <text class='iconfont icon-dalou3'></text>
+            <text>主办方：{{sponsor}}</text>
+        </view>
+        <view>
+            <text class='iconfont icon-dianhua3'></text>
+            <text>咨询电话：{{phone}}</text>
+        </view>
+        <view>
+            <text class='iconfont icon-baoming'></text>
+            <text>报名开始时间：{{bm_time}}</text>
+        </view>
+    </view>
+    <!-- 课程信息 end -->
+    <!-- 讲师信息 start -->
+    <view class='teacher_del'>
+        <image src='http://imyu.top/xcx/teacher4.png'></image>
+        <view>北京鼎商教育集团、国内著名路演实战专家韩博艺 他以其个人的奋斗和成功经历为选手解读了青年人成长与社会发展的关系，当代社会为年轻人提供了良好的发展机遇，随着社会的发展，未来的品牌将走向个人品牌时代，是分众的销售。青年人是社会的未来，要善于接受新生事物，要打破思维，勇于尝试创新。当今是财富大转移的时代，青年人要跟随时代的步伐勇于投入新兴产业。并预祝选后在大赛中取得好成绩，为吉林争光。</view>
+        <image src='http://imyu.top/xcx/teacher5.png'></image>
+        <view>北京鼎商教育集团、国内著名路演专家韩博艺 吉林赛区组委会路演顾问、北京鼎商教育集团、国内著名路演专家韩博艺导师为同学们进行了青年创新创业未来发展趋势的讲解，分析了当今网红经济的发展格局和产业思维。</view>
+    </view>
+    <!-- 讲师信息 end -->
+    
+</view>
+<!-- 内容部分 end -->
+

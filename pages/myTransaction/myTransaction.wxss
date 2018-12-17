@@ -1,0 +1,24 @@
+/* pages/myTransaction/myTransaction.wxss */
+.wrap{
+    display: flex;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    font-size: 28rpx;
+    border-bottom: 1px solid #b2b2b2;
+}
+.wrap .time{
+    padding-top: 6rpx;
+    color: #a3a3a3;
+    font-size: 24rpx;
+}
+.wrap .left{
+    flex: 1;
+}
+.wrap .right{
+    display: flex;
+    align-items: center;
+}
+.wrap .iconfont{
+    margin-left: 10rpx;
+    font-size: 20rpx;
+}

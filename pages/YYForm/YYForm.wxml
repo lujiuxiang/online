@@ -1,0 +1,44 @@
+<!--pages/YYForm/YYForm.wxml-->
+<view class='container'>
+    <image src='{{title_logo}}' mode='widthFix'></image>
+
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section">
+            <view class="section__title">姓名</view>
+            <input name="user" value='{{user}}' placeholder="请输入姓名" />
+        </view>
+        <view class="section section_gap">
+            <view class="section__title">性别</view>
+            <radio-group name="sex">
+                <label>
+                    <radio value="男" checked/>男
+                </label>
+                <label>
+                    <radio value="女" />女
+                </label>
+            </radio-group>
+        </view>
+        <view class="section">
+            <view class="section__title">年龄</view>
+            <input name="age" value='{{age}}' placeholder="请输入年龄" />
+        </view>
+        <view class="section">
+            <view class="section__title">联系电话</view>
+            <input name="phone" value='{{phone}}' placeholder="请输入联系电话" />
+        </view>
+        <view class="section">
+            <view class="section__title">毕业院校</view>
+            <input name="school" value='{{school}}' placeholder="请输入毕业院校"/>
+        </view>
+        <view class="section">
+            <view class="section__title">备注</view>
+            <input name="moreinfo" placeholder="请输入备注"/>
+        </view>
+        <view class="btn-area">
+            <button formType="submit">提交</button>
+            <button formType="reset">重置</button>
+        </view>
+    </form>
+</view>
+
+

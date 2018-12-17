@@ -1,0 +1,44 @@
+/* pages/YYForm/YYForm.wxss */
+.container{
+    justify-content: flex-start;
+}
+image{
+    width: 100%;
+}
+
+form{
+    width: 100%;
+    font-size: 28rpx;
+}
+.section{
+    display: flex;
+    align-items: center;
+    padding: 0 50rpx;
+    height: 90rpx;
+    border-bottom: 1px solid #eee;
+}
+.section__title{
+    height: 100%;
+    line-height: 90rpx;
+}
+input{
+    display: inline-block;
+    flex: 1;
+    height: 100%;
+    line-height: 90rpx;
+    vertical-align: middle;
+}
+.section view{
+    margin-right: 20rpx;
+}
+.btn-area{
+    display: flex;
+    margin: 20rpx;
+}
+button{
+    flex: 1;
+    margin: 0 20rpx;
+    font-size: 30rpx;
+}
+
+

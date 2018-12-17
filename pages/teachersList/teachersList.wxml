@@ -1,0 +1,9 @@
+<!--pages/teachersList/teachersList.wxml-->
+<view class='wrap'>
+    <block wx:for="{{list}}" wx:key="index">
+        <view class='list' bindtap='goTeachersDetails' data-id="{{item.id}}">
+            <image src='{{item.src}}'></image>
+            <view>{{item.name}}</view>
+        </view>
+    </block>
+</view>

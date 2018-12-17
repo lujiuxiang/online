@@ -1,0 +1,43 @@
+/* pages/myTransactionDel/myTransactionDel.wxss */
+.wrap{
+    font-size: 28rpx;
+}
+.top{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20rpx;
+}
+.top image{
+    width: 230rpx;
+    height: 165rpx;
+}
+.top > view{
+    width: 420rpx;
+}
+.top .title{
+    margin-bottom: 10rpx;
+    font-weight: bold;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+}
+.top .del{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:3;
+    text-overflow: ellipsis;
+    font-size: 24rpx;
+}
+
+.list{
+    border-top: 1px solid #ddd;
+}
+.list > view{
+    padding: 16rpx 40rpx;
+    border-bottom: 1px solid #ddd;
+}
+.list .right{
+    float: right;
+}

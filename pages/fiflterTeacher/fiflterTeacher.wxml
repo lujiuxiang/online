@@ -1,0 +1,15 @@
+<!--pages/fiflterTeacher/fiflterTeacher.wxml-->
+<!-- 课程列表 start -->
+<view class='class_list index_class' bindtap='goTeacherDetails'>
+    <block wx:for="{{class_list}}" wx:key="index">
+        <view>
+            <image src='{{item.src}}'></image>
+            <view class='c_l_right'>
+                <view class='c_l_title'>{{item.title}}</view>
+                <view class='ddd text_hidden'>{{item.details}}</view>
+                <view class='ddd'>人气:{{item.rq}} <text>立即观看</text></view>
+            </view>
+        </view>
+    </block>
+</view>
+<!-- 课程列表 end -->

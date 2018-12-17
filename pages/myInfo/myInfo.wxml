@@ -1,0 +1,25 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class='wrap'>
+    <view>
+        <text>头像</text>
+        <input disabled='true'  type='text' name="photo"></input>
+        <image src='{{images}}' bindtap='actionSheetTap'></image>
+    </view>
+    <view><text>姓名</text><input type='text' bindblur="changeRealName" name="user" value='{{realname}}'></input></view>
+    <view><text>身份证号</text><input type='tel' bindblur="changeIdCard" name="idCard" value='{{idCard}}'></input></view>
+    <view><text>手机号码</text><input type='tel' bindblur="changePhone"  name="phone" value='{{phone}}'></input></view>
+    
+    <view><text>ID</text><input disabled='true' type='text' name="ID" value='{{ID}}'></input></view>
+    <view><text>推荐人</text><input disabled='true' type='text' name="referrer" value='{{tj}}'></input></view>
+
+    <!-- 底部弹出框 -->
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+        <block wx:for-items="{{actionSheetItems}}" wx:key="index">
+            <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+</view>
+
+
+

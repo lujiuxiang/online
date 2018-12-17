@@ -1,0 +1,56 @@
+<import src="../../template/calendar/index.wxml"/>
+<view class="calendar-wrap">
+   <template is="calendar" data="{{...calendar}}" />
+  <!-- <button class="switchView" type="primary" bindtap="switchView">周/月视图</button> -->
+</view>
+
+<view class='class_info'>
+    <view class='title'>本月有<text>{{mouth_count}}</text>条 相关课程</view>
+    <view class='filter' bindtap='filter_model' style='background: none;'>筛选</view>
+    <view class='list'>
+        <block wx:for="{{list}}" wx:key="{{index}}">
+            <view>
+                <text>{{item.addr}}</text>
+                <text style='color: red;'>{{item.class}}</text>
+                <text>{{item.teacher}}</text>
+                <text class='fr' bindtap='go_yy_classDetails' data-id="{{index}}">详情</text>
+            </view>
+        </block>
+    </view>
+</view>
+
+
+<!-- 点击筛选 弹出遮罩层 start -->
+<view class='bg' wx:if="{{isBlock}}" bindtap='hideModal' catchtouchmove="preventTouchMove"></view>
+<view class='model' wx:if="{{isBlock}}" animation='{{animationData}}' catchtouchmove="preventTouchMove">
+    <scroll-view scroll-y style="width: auto;overflow:hidden;">
+        <view class='index_filter'>
+            <picker class='teac' bindchange="bindPickerChange" value="{{Index_1}}" range="{{teachersArr}}" range-key="teacher">
+                <text class='left'>老师</text>
+                <text class='right'>{{teacherText}}</text>
+
+            </picker>
+
+            <picker class='type' bindchange="bindPickerChange2" value="{{Index_2}}" range="{{typeArr}}" range-key="text">
+                <text class='left'>类型</text>
+                <text class='right'>{{typeText}}</text>
+
+            </picker>
+            <picker class='type' bindchange="changeArea" mode = "region" value="{{area}}">
+                <text class='left'>地区</text>
+                <text class='right'>{{area}}</text>
+            </picker>
+
+            <!-- <picker class='type' bindchange="bindPickerChange3" value="{{Index_3}}" range="{{typeArr}}" range-key="text">
+                <text class='left'>类型</text>
+                <text class='right'>{{typeText}}</text>
+
+            </picker> -->
+            <view class='bot'>
+                <view bindtap='hideModal'>取消</view>
+                <view bindtap='goFiflterTeacher'>确定</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<!-- 点击筛选 弹出遮罩层 end -->

@@ -1,0 +1,13 @@
+<!--pages/myTransaction/myTransaction.wxml-->
+<block wx:for="{{list}}" wx:key="index">
+    <view class='wrap' data-id="{{item.id}}" bindtap='goDetails'>
+        <view class='left'>
+            <view>{{item.type}}</view>
+            <view class='time'>{{item.time}}</view>
+        </view>
+        <view class='right'>
+            {{item.money}}
+            <text class='iconfont icon-youjiantou'></text>    
+        </view>
+    </view>
+</block>

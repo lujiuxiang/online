@@ -1,0 +1,129 @@
+/* pages/appointment/appointment.wxss */
+@import '../../template/calendar/index.wxss';
+
+.switchView {
+  width: 300rpx;
+  margin-top: 50rpx;
+}
+
+.filter{
+    position: absolute;
+    top: 20rpx;
+    right: 30rpx;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+/* 底部课程列表 start */
+.class_info{
+    padding: 0 20rpx;
+    font-size: 24rpx;
+}
+
+.class_info .title{
+    padding: 10rpx 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 30rpx;
+}
+.class_info .title text{
+    color: red;
+}
+.class_info .list > view{
+    padding: 10rpx 0;
+}
+.class_info .list > view text{
+    padding-right: 20rpx;
+}
+.class_info .list .fr{
+    padding: 0 10rpx;
+    float: right;
+    color: red;
+    font-weight: bold;
+}
+/* 底部课程列表 end */
+
+
+/* 弹出遮罩层 start */
+.bg{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,.4);
+    width: 100%;
+    height: 100%;
+    background-image: none;
+}
+.model{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+}
+.close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10%;
+    text-align: right;
+    font-size: 28rpx;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.close text{
+    padding: 20rpx 30rpx;
+}
+
+/* 筛选 start */
+.filter{
+    background-color: rgba(0, 0, 0, .1)
+}
+.index_filter{
+    padding: 30rpx 20rpx;
+    margin: 20rpx auto 0;
+    width: 95%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.index_filter > view,
+.index_filter > picker{
+    display: flex;
+    position: relative;
+    font-size: 28rpx;
+}
+.index_filter > picker{
+    padding-bottom: 10rpx;
+}
+.index_filter .left{
+    flex: 1;
+}
+.index_filter .right{
+    position: absolute;
+    right: 0;
+    width: 90%;
+    text-align: right;
+    color: #afb1b4;
+}
+.index_filter .teac{
+    padding-top: 20rpx;
+    border-bottom: 1px solid #ddd;
+}
+.index_filter .type{
+    padding-top: 60rpx;
+    border-bottom: 1px solid #ddd;
+}
+.index_filter .bot{
+    margin-top: 40rpx;
+    justify-content: space-around;
+}
+.index_filter .bot view{
+    padding: 10rpx 60rpx;
+    color: #fff;
+    background-color: #f60;
+    border-radius: 10rpx;
+}
+/* 筛选 end */
+/* 弹出遮罩层 end */
+
+
+
+

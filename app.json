@@ -1,0 +1,71 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/class/class",
+        "pages/appointment/appointment",
+        "pages/myClass/myClass",
+        "pages/mine/mine",
+        "pages/fiflterTeacher/fiflterTeacher",
+        "pages/teachersList/teachersList",
+        "pages/teachersDetails/teachersDetails",
+        "pages/connection/connection",
+        "pages/mapNav/mapNav",
+        "pages/classDetails/classDetails",
+        "pages/moreClassDetails/moreClassDetails",
+        "pages/membership/membership",
+        "pages/noticeDetails/noticeDetails",
+        "pages/myMember/myMember",
+        "pages/myYY/myYY",
+        "pages/myConnection/myConnection",
+        "pages/YYForm/YYForm",
+        "pages/myInfo/myInfo",
+        "pages/myTransaction/myTransaction",
+        "pages/register/register",
+        "pages/forgetPassword/forgetPassword",
+        "pages/myTransactionDel/myTransactionDel"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#e300c1",
+        "navigationBarTitleText": "大圣课堂",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#919191",
+        "selectedColor": "#e8009d",
+        "backgroundColor": "#f9f9f9",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./images/1.png",
+                "selectedIconPath": "./images/1_hover.png"
+            },
+            {
+                "pagePath": "pages/class/class",
+                "text": "网红课程",
+                "iconPath": "./images/2.png",
+                "selectedIconPath": "./images/2_hover.png"
+            },
+            {
+                "pagePath": "pages/appointment/appointment",
+                "text": "公开课程",
+                "iconPath": "./images/3.png",
+                "selectedIconPath": "./images/3_hover.png"
+            },
+            {
+                "pagePath": "pages/YYForm/YYForm",
+                "text": "预约现场",
+                "iconPath": "./images/4.png",
+                "selectedIconPath": "./images/4_hover.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "./images/5.png",
+                "selectedIconPath": "./images/5_hover.png"
+            }
+            
+        ]
+    }
+}

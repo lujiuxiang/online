@@ -1,0 +1,14 @@
+<!--pages/myYY/myYY.wxml-->
+<block wx:for="{{list}}" wx:key="index">
+    <view class='list'> 
+        <view class='title'><text>{{item.type}}</text><view>取消预约</view></view>
+        <view class='bot'>
+            <image src='{{item.src}}'></image>
+            <view class='right'>
+                <view class='title'>{{item.title}}</view>
+                <view class='teacher'>主讲人：{{item.teacher}}</view>
+                <view>时间：{{item.time}}</view>
+            </view>
+        </view>
+    </view>
+</block>

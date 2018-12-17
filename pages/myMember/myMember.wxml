@@ -1,0 +1,48 @@
+<!--pages/membership/membership.wxml-->
+<view class='container'>
+    <!-- 顶部 我的信息 start -->
+    <view class='myInfo'>
+        <image src='{{my_img}}'></image>
+        <view class='right'>
+            <view>{{realname}}</view>
+            <view>{{memberType}}</view>
+        </view>
+    </view>
+    <!-- 顶部 我的信息 end -->
+
+    <!-- 会员课程简介 start -->
+    <view class='memberIntro'>
+        <view class='title'>会员课程如何升级</view>
+        <block wx:for="{{why_list}}" wx:key="index">
+            <view class='why_list' data-id='{{item.id}}'>
+                {{item.text}}
+            </view>
+            <view class='result'>答：{{item.result}}</view>
+        </block>
+    </view>
+
+    <!-- 会员课程简介 end -->
+
+    <!-- 会员列表 start -->
+    <block wx:for="{{list}}" wx:key="index">
+        <view class='wrap'>
+            <view class='title'>
+                <text>{{item.level}}</text>
+                <text class='pay'>
+                    <text>快捷支付</text>
+                </text>
+            </view>
+            <view class='money'>{{item.money}}元</view>
+            <view class='del'>
+                <text wx:if="{{item.id == 1}}">开通会员可享受全部初级课程免费观看</text>
+                <text wx:elif="{{item.id == 2}}">开通会员可享受全部中级课程免费观看</text>
+                <text wx:elif="{{item.id == 3}}">开通会员可享受全部高级课程免费观看</text>
+            </view>
+            <view class='bot'>
+                <text>专享</text>
+                <view>立即充值</view>
+            </view>
+        </view>
+    </block>
+    <!-- 会员列表 end -->
+</view>
