@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container page">
+    <view class="layout-content">
+        <view class="layout-tab">
+            <!-- top_nav start -->
+            <view class="layout-tab-title">
+                <block wx:for="{{top_nav}}" wx:key="index">
+                    <view class="tab-title {{isSelect == index ? 'select': ''}}" bindtap="changeTab" data-type="{{index}}">
+                        <view>{{item.title}}</view>
+                    </view>
+                </block>
+            </view>
+            <!-- top_nav end -->
+            <!-- 内容 start -->
+            <view class="layout-tab-swiper">
+                <swiper current="{{isSelect}}" bindchange="swiperChange" duration="{{200}}">
+                    <!-- 课程列表 start -->
+                    <block wx:for="{{list}}" wx:key="index">
+                        <swiper-item>
+                            <scroll-view scroll-y>
+                                <block wx:for="{{item}}" wx:key="index">
+                                    <view class="layout-tab-lists" bindtap='goClassDetails'>
+                                        <image src='{{item.src}}'></image>
+                                        <view class='right'>
+                                            <view class='title'>{{item.title}}</view>
+                                            <view class='watched'>
+                                                已有{{item.watched}}人观看过
+                                                <text wx:if="{{!item.isMember}}">￥{{item.money}}</text>
+                                            </view>
+                                            <view class='ismember'>
+                                                <text wx:if="{{item.isMember}}">已开通会员 免费</text>
+                                                <text wx:else>请购买课程或开通会员</text>
+                                                </view>
+                                            <view class='go_watch'>立即观看</view>
+                                        </view>
+                                    </view>
+                                </block>
+                            </scroll-view>
+                        </swiper-item>
+                    </block>
+                    <!-- 课程列表 end -->
+                </swiper>
+            </view>
+            <!-- 内容 end -->
+
+        </view>
+    </view>
+</view>

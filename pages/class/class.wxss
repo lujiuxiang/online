@@ -1,0 +1,102 @@
+/* pages/index/index.wxss */
+.container{
+    font-size: 24rpx;
+}
+.layout-content {
+    width: 100%;
+    height: 100%;
+}
+ 
+/* tab */
+/* 首页头部导航 start */
+.layout-tab {
+    position: relative;
+    height: 100%;
+}
+ 
+.layout-tab-title {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: 8%;
+    align-items: center;
+    justify-content: space-around;
+    color: #000;
+    background-color: #fff;
+}
+.layout-tab-swiper{
+    height: 92%;
+}
+.layout-tab-swiper swiper,scroll-view{
+    height: 100%;
+}
+.tab-title {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+ 
+.select {
+    border-bottom: 1px solid #e8009d;
+    height: 65%;
+    color: #e8009d;
+}
+/* 首页头部导航 end */
+ 
+/* swiperTab */
+
+.layout-tab-lists{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10rpx 20rpx;
+}
+
+image{
+    margin-right: 10rpx;
+    width: 240rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+}
+.right{
+    position: relative;
+    flex: 1;
+}
+.right .title{
+    width: 100%;
+    font-size: 28rpx;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.right .watched{
+    position: relative;
+    padding: 10rpx 0;
+}
+.right .watched text{
+    position: absolute;
+    right: 0;
+    color: red;
+    font-size: 28rpx;
+    bottom: 10rpx;
+}
+.right .ismember{
+    padding-top: 10rpx;
+    height: 36rpx;
+    font-size: 30rpx;
+    color: #e8009d;
+}
+.right .go_watch{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10rpx 20rpx;
+    color: #fff;
+    background-color: #e8009d;
+    border-radius: 10rpx;
+}
