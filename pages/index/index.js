@@ -333,7 +333,7 @@ Page({
     goClassDetails(e){
         console.log(e.currentTarget.dataset.index)
         wx.navigateTo({
-            url: '../yyClassDetails/yyClassDetails',
+            url: '../classDetails/classDetails',
         })
     },
     // 跳转通知公告页面

@@ -1,0 +1,55 @@
+/* pages/liveLocale/liveLocale.wxss */
+
+/* 顶部视频 start */
+page{
+    background-color: #f4f4f4;
+}
+.videoWrap{
+    position: relative;
+}
+.myVideo{ 
+  width:100%;
+  height: calc(9 * 750rpx / 16);
+  background-color: #fff;
+}
+.controls{
+  position:absolute;
+  z-index:1; 
+  background-color: #fff;    
+   height: calc(9 * 750rpx / 16); 
+  margin-top:-430rpx;
+}
+.play{ 
+    position:absolute;
+    left:50%;
+    margin-top:-300rpx;
+    margin-left:-80rpx;    
+}
+/* 顶部视频 end */
+
+/* 课程列表 start */
+.list{
+    position: relative;
+    margin: 10rpx 0;
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+    font-size: 24rpx;
+    box-sizing: border-box;
+}
+.list > view{
+    padding: 5rpx 0;
+}
+.list text{
+    margin-left: 40rpx;
+}
+.list .right{
+    position: absolute;
+    right: 20rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10rpx 20rpx;
+    color: #fff;
+    background-color: #ec008b;
+    border-radius: 10rpx;
+}
+/* 课程列表 end */

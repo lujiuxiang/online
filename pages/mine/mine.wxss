@@ -1,58 +1,5 @@
 /* pages/mine/mine.wxss */
 
-/* 登陆 start */
-.loginWrap{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.loginWrap image{
-    margin: 100rpx auto;
-    width: 180rpx;
-    height: 180rpx;
-    border-radius: 50%;
-}
-.loginWrap form{
-    padding: 0 90rpx;
-    width: 100%;
-    box-sizing: border-box;
-}
-form view{
-    display: flex;
-    height: 90rpx;
-    line-height: 90rpx;
-    font-size: 30rpx;
-    border-bottom: 1px solid #000;
-}
-form input{
-    flex: 1;
-    display: inline-block;
-    height: 100%;
-    line-height: 90rpx;
-    margin-left: 16rpx;
-}
-form button{
-    margin-top: 100rpx;
-    color: #fff;
-    font-size: 28rpx;
-    background-color: #e8009f;
-}
-form .button-hover{
-    color: #fff;
-    background-color: #e8009f;
-}
-
-.others{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40rpx;
-    padding: 0 90rpx;
-    width: 100%;
-    font-size: 28rpx;
-}
-/* 登陆 end */
-
-
 
 /* 顶部 会员信息 start */
 .title{
@@ -81,6 +28,16 @@ form .button-hover{
     top: 50%;
     transform: translateY(-50%);
 }
+
+.no_login{
+    display: flex;
+
+}
+.no_login view{
+    padding: 0 10rpx;
+    font-size: 28rpx;
+}
+
 /* 顶部 会员信息 end */
 
 /* 底部 列表 start */

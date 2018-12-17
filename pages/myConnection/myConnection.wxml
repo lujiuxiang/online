@@ -1,8 +1,0 @@
-<!--pages/myConnection/myConnection.wxml-->
-<block wx:for="{{list}}" wx:key="index">
-    <view class='list'>
-        <image src='{{item.src}}'></image>
-        <view class='username'>{{item.username}}</view>
-        <text>{{item.time}}</text>
-    </view>
-</block>

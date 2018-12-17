@@ -1,34 +1,20 @@
 <!--pages/mine/mine.wxml-->
 
-<!-- 登陆页面 start -->
-<view class='loginWrap' wx:if="{{!login}}">
-    <image src='{{title_img}}'></image>
-
-    <form bindsubmit="formSubmit">
-        <view><text>账号</text><input type='tel' name="user" placeholder='请输入注册的手机号'></input></view>
-        <view><text>密码</text><input type='password' name="password" placeholder='请输入密码'></input></view>
-
-        <button formType="submit">登 录</button>
-    </form>
-    <view class='others'>
-        <navigator url='../register/register'>立即注册</navigator>
-        <navigator url='../forgetPassword/forgetPassword'>忘记密码</navigator>
-    </view>
-</view>
-<!-- 登陆页面 end -->
-
-<!-- ------------------------------------------------------------------------------>
-
-<!-- 登陆成功之后 会员信息 -->
-
 <!-- 顶部 会员信息 start -->
-<view wx:if="{{login}}">
-    <view class='title' bindtap='goMyInfo'>
+<view>
+    <view class='title' wx:if="{{login}}" bindtap='goMyInfo'>
         <image src='{{title_img}}'></image>
         <view class='t_right'>
             <view class='username'>{{username}}</view>
             <view class='vip'>vip学员</view>
             <text class='iconfont icon-youjiantou'></text>
+        </view>
+    </view>
+    <view class='title' wx:else>
+        <image src='{{title_img}}'></image>
+        <view class='no_login'>
+            <view bindtap='go_login'>登录</view>/
+            <view bindtap='go_register'>注册</view>
         </view>
     </view>
     <!-- 顶部 会员信息 end -->
@@ -42,6 +28,11 @@
                 <text class='iconfont icon-youjiantou'></text>
             </view>
         </block>
+        <view bindtap='loginout' wx:if="{{login}}">
+            <text class='iconfont icon-tuichu' style='color: #f66060;'></text>
+            <text>退出</text>
+            <text class='iconfont icon-youjiantou'></text>
+        </view>
     </view>
     <!-- 底部 列表 end -->
 </view>

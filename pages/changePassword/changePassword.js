@@ -7,10 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        user: "",
-        phone: "",
-        idCard: "",
-        referrer: ""
+        password: "",
+        password_2: "",
     },
 
     //报错 
@@ -23,50 +21,32 @@ Page({
     //验证函数
     initValidate() {
         const rules = {
-            user: {
+            password: {
                 required: true,
-                minlength: 2
+                minlength: 6,
+                maxlength: 12,
             },
-            phone: {
+            password_2: {
                 required: true,
-                tel: true
+                minlength: 6,
+                maxlength: 12,
             },
-            idcard: {
-                required: true,
-                idcard: true
-            },
-            referrer: {
-                required: true,
-                minlength: 2
-            }
         }
         const messages = {
-            user: {
-                required: '请填写姓名',
-                minlength: '请输入正确的名称'
+            password: {
+                required: '请填写新密码',
             },
-            phone: {
-                required: '请填写手机号',
-                tel: '请填写正确的手机号'
+            password_2: {
+                required: '请填写确认密码',
             },
-            idcard: {
-                required: '请填写身份证号',
-                idcard: "请输入正确的身份证号"
-            },
-            referrer: {
-                required: '请填写推荐人',
-                minlength: '请输入正确的名称'
-            }
         }
         this.WxValidate = new WxValidate(rules, messages)
     },
     formSubmit: function (e) {
         console.log('form发生了submit事件，携带数据为：', e.detail.value);
         let {
-            user,
-            phone,
-            idcard,
-            referrer
+            password,
+            password_2,
         } = e.detail.value;
 
 
@@ -78,19 +58,26 @@ Page({
             this.showModal(error)
             return false
         }
+
+        if(password !== password_2){
+            wx.showModal({
+                title: '提示',
+                content: '两次输入不一致，请重新输入',
+            })
+            return
+        }
+
         this.showModal({
             msg: '提交成功'
         })
 
         this.setData({
-            user: user,
-            phone: phone,
-            idCard: idcard,
-            referrer: referrer
+            password: password,
+            password_2: password_2,
         })
 
         wx.navigateTo({
-            url: '../changePassword/changePassword',
+            url: '../login/login',
         })
     },
     /**

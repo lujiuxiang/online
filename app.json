@@ -3,6 +3,7 @@
         "pages/index/index",
         "pages/class/class",
         "pages/appointment/appointment",
+        "pages/liveLocale/liveLocale",
         "pages/myClass/myClass",
         "pages/mine/mine",
         "pages/fiflterTeacher/fiflterTeacher",
@@ -16,12 +17,13 @@
         "pages/noticeDetails/noticeDetails",
         "pages/myMember/myMember",
         "pages/myYY/myYY",
-        "pages/myConnection/myConnection",
         "pages/YYForm/YYForm",
         "pages/myInfo/myInfo",
         "pages/myTransaction/myTransaction",
+        "pages/login/login",
         "pages/register/register",
         "pages/forgetPassword/forgetPassword",
+        "pages/changePassword/changePassword",
         "pages/myTransactionDel/myTransactionDel"
     ],
     "window": {
@@ -54,7 +56,7 @@
                 "selectedIconPath": "./images/3_hover.png"
             },
             {
-                "pagePath": "pages/YYForm/YYForm",
+                "pagePath": "pages/liveLocale/liveLocale",
                 "text": "预约现场",
                 "iconPath": "./images/4.png",
                 "selectedIconPath": "./images/4_hover.png"

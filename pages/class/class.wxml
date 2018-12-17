@@ -27,6 +27,7 @@
                                                 已有{{item.watched}}人观看过
                                                 <text wx:if="{{!item.isMember}}">￥{{item.money}}</text>
                                             </view>
+                                            <view class='mark'>{{item.mark}}积分观看</view>
                                             <view class='ismember'>
                                                 <text wx:if="{{item.isMember}}">已开通会员 免费</text>
                                                 <text wx:else>请购买课程或开通会员</text>

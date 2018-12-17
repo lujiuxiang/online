@@ -5,6 +5,12 @@ Page({
      * 页面的初始数据
      */
     data: {
+        myMark: "666",
+        cj_mark: "20",
+        zj_mark: "40",
+        gj_mark: "60",
+        isBlock: false,
+
         list: [
             {
                 src: "http://imyu.top/xcx/pl_1.png",
@@ -44,6 +50,13 @@ Page({
      */
     onLoad: function (options) {
 
+    },
+
+    // 显示 / 隐藏弹窗
+    showPop(){
+        this.setData({
+            isBlock: !this.data.isBlock
+        })
     },
 
     /**

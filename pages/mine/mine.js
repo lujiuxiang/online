@@ -25,7 +25,7 @@ Page({
                 icon: "iconfont icon-ai-connection",
                 text: "我的人脉",
                 color: "#f60",
-                url: "../myConnection/myConnection"
+                url: "../connection/connection"
             },
             {
                 icon: "iconfont icon-jiaoyichenggong",
@@ -39,54 +39,15 @@ Page({
                 color: "#f66060",
                 url: ""
             },
-            {
-                icon: "iconfont icon-tuichu",
-                text: "退出",
-                color: "#f66060",
-                id: "loginout"
-            },
         ]
     },
-
-    // 登录
-    formSubmit: function (e) {
-        let that = this
-        console.log('form发生了submit事件，携带数据为：', e.detail.value);
-
-        // this.setData({
-        //     login: 1
-        // })
-        wx.login({
-            success(res) {
-                if (res.code) {
-                    // 发起网络请求
-                    // wx.request({
-                    //     url: 'https://test.com/onLogin',
-                    //     data: {
-                    //         code: res.code
-                    //     }
-                    // })
-                    wx.setStorageSync("logincode", res.code)
-                    // 检测进入页面时 是否是登陆状态
-                    let logincode = wx.getStorageSync("logincode")
-                    that.setData({
-                        login: logincode
-                    })
-                } else {
-                    console.log('登录失败！' + res.errMsg)
-                }
-            }
-        })
-    },
-
-
 
     // 联系我们
     goSecondLevel(e){
         let url = e.currentTarget.dataset.url;
         let id = e.currentTarget.dataset.id;
         let that = this;
-        if(!url && !id){
+        if(!url){
             wx.makePhoneCall({
                 phoneNumber: '17519404549', //此号码并非真实电话号码，仅用于测试
                 success: function () {
@@ -97,43 +58,56 @@ Page({
                 }
             })
             return
-        }else if(!url && id === "loginout"){
-            // 退出登录状态
-            wx.showModal({
-                title: '提示',
-                content: '确定要退出吗？',
-                success: function(res){
-                    if(res.confirm){
-                        return new Promise((resolve,rej)=>{
-                            wx.clearStorageSync("logincode")
-                            resolve(res)
-                        }).then(res=>{
-                            that.setData({
-                                login: wx.getStorageSync("logincode")
-                            })
-                        }).catch(rej=>{
-                            console.log(rej)
-                        })
-                    }
-                }
-            })
-            return
         }
         wx.navigateTo({
             url: url,
         })
     },
-
+    // 退出登录
+    loginout(){
+        let that = this;
+        // 退出登录状态
+        wx.showModal({
+            title: '提示',
+            content: '确定要退出吗？',
+            success: function (res) {
+                if (res.confirm) {
+                    return new Promise((resolve, rej) => {
+                        wx.clearStorageSync("logincode")
+                        resolve(res)
+                    }).then(res => {
+                        that.setData({
+                            login: wx.getStorageSync("logincode")
+                        })
+                    }).catch(rej => {
+                        console.log(rej)
+                    })
+                }
+            }
+        })
+    },
+    // 跳转我的信息
     goMyInfo(){
         wx.navigateTo({
             url: '../myInfo/myInfo',
+        })
+    },
+    // 跳转 登录页
+    go_login(){
+        wx.navigateTo({
+            url: '../login/login',
+        })
+    },
+    // 跳转 注册页
+    go_register(){
+        wx.navigateTo({
+            url: '../register/register',
         })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
     },
 
     /**
@@ -147,7 +121,11 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        
+        // 检测进入页面时 是否是登陆状态
+        let logincode = wx.getStorageSync("logincode")
+        this.setData({
+            login: logincode
+        })
     },
 
     /**
@@ -182,6 +160,22 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title: '大圣课堂',
+            desc: '我在大圣课堂学到了很多有用的知识，快来和我一起学习把~',
+            imageUrl: "http://imyu.top/xcx/video_bg.png",
+            path: '/pages/index/index',
+            success: function () {
+                wx.showToast({
+                    title: '转发成功',
+                })
+            },
+            fail: function () {
+                wx.showToast({
+                    title: '转发失败',
+                    icon: "none"
+                })
+            }
+        }
     }
 })

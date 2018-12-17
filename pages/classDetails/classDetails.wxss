@@ -78,3 +78,21 @@
     background-color: #e60012;
 }
 /* 底部 会员申请 end */
+
+/* 底部 会员申请 start */
+.Membership{
+    position: fixed;
+    bottom: 0;
+    padding: 6rpx 0;
+    width: 95%;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    background-color: #fff;
+    text-align: center;
+}
+.Membership view{
+    border-radius: 10rpx;
+    background-color: green;
+}
+/* 底部 会员申请 end */

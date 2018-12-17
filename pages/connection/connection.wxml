@@ -1,4 +1,16 @@
 <!--pages/myConnection/myConnection.wxml-->
+<!-- 积分介绍 start -->
+<view class='top'>
+    <view>
+        我的积分 <text>{{myMark}}</text>
+        <text bindtap='showPop' class='iconfont icon-wenhao'></text>
+    </view>
+    <view>{{cj_mark}}积分可兑换初级单节付费课程</view>
+    <view>{{zj_mark}}积分可兑换中级单节付费课程</view>
+    <view>{{gj_mark}}积分可兑换高级单节付费课程</view>
+</view>
+<!-- 积分介绍 end -->
+<!-- 我的人脉 start -->
 <block wx:for="{{list}}" wx:key="index">
     <view class='list'>
         <image src='{{item.src}}'></image>
@@ -6,3 +18,49 @@
         <text>{{item.time}}</text>
     </view>
 </block>
+<!-- 我的人脉 end -->
+
+
+<!-- 弹窗 start -->
+<view class='pop_bg' wx:if="{{isBlock}}" bindtap='showPop'></view>
+<view class='pop' wx:if="{{isBlock}}">
+    <view class='title'>
+        积分详情 
+        <text class='iconfont icon-buoumaotubiao20' bindtap='showPop'></text>
+    </view>
+    <scroll-view scroll-y>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+        <view>1</view>
+    </scroll-view>
+</view>
+<!-- 弹窗 end -->

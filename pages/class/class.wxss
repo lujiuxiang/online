@@ -76,7 +76,7 @@ image{
 }
 .right .watched{
     position: relative;
-    padding: 10rpx 0;
+    padding: 5rpx 0;
 }
 .right .watched text{
     position: absolute;
@@ -85,10 +85,11 @@ image{
     font-size: 28rpx;
     bottom: 10rpx;
 }
+.right .mark{
+    color: #e8009d;
+}
 .right .ismember{
-    padding-top: 10rpx;
-    height: 36rpx;
-    font-size: 30rpx;
+    padding-top: 5rpx;
     color: #e8009d;
 }
 .right .go_watch{

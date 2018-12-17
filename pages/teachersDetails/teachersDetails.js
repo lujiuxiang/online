@@ -102,6 +102,22 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title: '大圣课堂',
+            desc: '我在大圣课堂学到了很多有用的知识，快来和我一起学习把~',
+            imageUrl: "http://imyu.top/xcx/video_bg.png",
+            path: '/pages/index/index',
+            success: function () {
+                wx.showToast({
+                    title: '转发成功',
+                })
+            },
+            fail: function () {
+                wx.showToast({
+                    title: '转发失败',
+                    icon: "none"
+                })
+            }
+        }
     }
 })

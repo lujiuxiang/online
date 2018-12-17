@@ -1,0 +1,29 @@
+<!--pages/liveLocale/liveLocale.wxml-->
+<!-- 顶部视频标签 start -->
+<view class='videoWrap'>
+    <video id="myVideo" class="myVideo" src="{{video_src}}" custom-cache="{{false}}">
+    </video>
+    <cover-view class="controls" style="display:{{tab_image}}; width:100%;">
+        <cover-image src="http://imyu.top/xcx/video_bg.png"  />
+    </cover-view>
+    <cover-view class="play" style="display:{{tab_image}};z-index:200;">
+        <cover-image bindtap="bindplay" src="http://imyu.top/xcx/video_play.png" style="width:160rpx;" />
+    </cover-view>
+</view>
+<!-- 顶部视频标签 end -->
+
+<!-- 预约课程 列表 start -->
+<block wx:for="{{list}}" wx:key="index">
+    <view class='list'>
+        <view class='title'>
+            {{item.title}}({{item.type}}) 
+            <text>导师：{{item.teacher}}</text>
+        </view>
+        <view class='time'>时间：{{item.time}}</view>
+        <view class='addr'>地址：{{item.addr}}</view>
+        <view class='right' bindtap='goClassDetails'>导师详情</view>
+    </view>
+</block>
+<!-- 预约课程 列表 end -->
+
+

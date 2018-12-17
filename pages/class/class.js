@@ -23,13 +23,17 @@ Page({
                     title: "初级课程初级课程初级课程初级课程初级课程初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
+                    mark: "70",
                     isMember: true,
                 },
                 {
                     src: "http://imyu.top/xcx/teacher3.png",
                     title: "初级课程",
                     watched: "666",
+                    mark: "70",
                     money: "99",
+                    mark: "80",
                     isMember: false,
                 },
                 {
@@ -37,6 +41,8 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
+                    mark: "70",
                     isMember: false,
                 },
                 {
@@ -44,6 +50,8 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
+                    mark: "70",
                     isMember: false,
                 },
                 {
@@ -51,6 +59,8 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
+                    mark: "70",
                     isMember: false,
                 },
                 {
@@ -58,6 +68,8 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
+                    mark: "70",
                     isMember: false,
                 },
                 {
@@ -65,6 +77,8 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
+                    mark: "70",
                     isMember: false,
                 },
                 {
@@ -72,6 +86,7 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
                     isMember: false,
                 },
                 {
@@ -79,6 +94,7 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
                     isMember: false,
                 },
                 {
@@ -86,6 +102,7 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
                     isMember: false,
                 },
                 {
@@ -93,6 +110,7 @@ Page({
                     title: "初级课程",
                     watched: "666",
                     money: "99",
+                    mark: "80",
                     isMember: false,
                 },
             ],
@@ -102,6 +120,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -109,6 +128,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -116,6 +136,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -123,6 +144,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -130,6 +152,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -137,6 +160,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -144,6 +168,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -151,6 +176,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -158,6 +184,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -165,6 +192,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -172,6 +200,7 @@ Page({
                     title: "中级课程",
                     watched: "666",
                     money: "299",
+                    mark: "90",
                     isMember: false,
                 },
             ],
