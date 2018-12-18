@@ -86,6 +86,7 @@ image{
     bottom: 10rpx;
 }
 .right .mark{
+    height: 32rpx;
     color: #e8009d;
 }
 .right .ismember{

@@ -210,6 +210,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: false,
                 },
                 {
@@ -217,6 +218,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -224,6 +226,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -231,6 +234,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -238,6 +242,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -245,6 +250,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -252,6 +258,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -259,6 +266,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -266,6 +274,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -273,6 +282,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
                 {
@@ -280,6 +290,7 @@ Page({
                     title: "高级课程",
                     watched: "666",
                     money: "399",
+                    mark: "90",
                     isMember: true,
                 },
             ],

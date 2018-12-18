@@ -216,7 +216,7 @@ const conf = {
         let id = e.currentTarget.dataset.id;
         console.log(id)
         wx.navigateTo({
-            url: '../yyClassDetails/yyClassDetails?id='+id,
+            url: '../classDetails/classDetails?is_show=show,id='+id,
         })
     },
     // 弹出筛选框
