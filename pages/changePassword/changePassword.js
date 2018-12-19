@@ -30,6 +30,7 @@ Page({
                 required: true,
                 minlength: 6,
                 maxlength: 12,
+                equalTo: 'password',
             },
         }
         const messages = {
@@ -38,6 +39,7 @@ Page({
             },
             password_2: {
                 required: '请填写确认密码',
+                equalTo: "确认密码与新密码不一致"
             },
         }
         this.WxValidate = new WxValidate(rules, messages)
@@ -57,14 +59,6 @@ Page({
             const error = this.WxValidate.errorList[0]
             this.showModal(error)
             return false
-        }
-
-        if(password !== password_2){
-            wx.showModal({
-                title: '提示',
-                content: '两次输入不一致，请重新输入',
-            })
-            return
         }
 
         this.showModal({

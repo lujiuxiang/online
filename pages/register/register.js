@@ -37,6 +37,7 @@ Page({
                 required: true,
                 minlength: 2
             },
+
             pass: {
                 required: true,
                 minlength: 6,
@@ -45,11 +46,13 @@ Page({
             passAgain: {
                 required: true,
                 minlength: 6,
-                maxlength: 12
+                maxlength: 12,
+                equalTo: 'pass',
             },
             age: {
                 required: true,
-                minlength: 2
+                min: 18,
+                max: 60
             },
             phone: {
                 required: true,
@@ -64,6 +67,7 @@ Page({
                 minlength: 2
             },
         }
+
         const messages = {
             nickname: {
                 required: '请填写昵称',
@@ -82,11 +86,13 @@ Page({
             passAgain: {
                 required: '请填写确认密码',
                 minlength: "确认密码最少6个字符",
-                maxlength: "确认密码最多12个字符"
+                maxlength: "确认密码最多12个字符",
+                equalTo: '确认密码和密码保持一致',
             },
             age: {
                 required: '请填写年龄',
-                minlength: '请输入正确的年龄'
+                min: '最小18岁',
+                max:"最大60岁"
             },
             phone: {
                 required: '请填写手机号',
@@ -102,20 +108,8 @@ Page({
             },
         }
         this.WxValidate = new WxValidate(rules, messages);
-
-
-        // 自定义验证规则 密码
-        this.WxValidate.addMethod('pass', (value, param) => {
-            console.log(value)
-            return this.WxValidate.optional(value) || (value.length >= 6 && value.length <= 12);
-        }, '密码长度为6-12个字符')
-        // 自定义验证规则  确认密码和密码是否一致
-        this.WxValidate.addMethod('passAgain', (value, param) => {
-            console.log(value,param)
-            return this.WxValidate.optional(value);
-        }, '两次输入的密码不一致')
     },
-    formSubmit: function (e) {
+    formSubmit: function(e) {
         console.log('form发生了submit事件，携带数据为：', e.detail.value);
         let {
             nickname,
@@ -158,56 +152,56 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
         this.initValidate()
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload: function() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom: function() {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage: function() {
 
     }
 })
