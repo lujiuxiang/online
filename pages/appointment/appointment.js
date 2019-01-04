@@ -321,7 +321,10 @@ const conf = {
             return
         }
         this.hideModal()
-
+        // 跳转到老师详情页
+        wx.navigateTo({
+            url: '../fiflterTeacher/fiflterTeacher',
+        })
         // 请求 底部课程信息
 
     }

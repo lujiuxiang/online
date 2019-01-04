@@ -115,6 +115,7 @@
                                     <view bindtap='goNoticeDetails' data-item="{{item}}">
                                         <image src='{{item.src}}'></image>
                                         <view class='n_text'>{{item.details}}</view>
+                                        <text class='iconfont icon-youjiantou'></text>
                                     </view>
                                 </block>
                             </view>

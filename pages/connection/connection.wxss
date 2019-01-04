@@ -59,7 +59,7 @@
     top: 0;
     margin: 15% 10%;
     width: 80%;
-    height: 80%;
+    height: 70%;
     background-color: #fff;
     border-radius: 10rpx;
     font-size: 28rpx;
@@ -69,11 +69,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7%;
+    height: 8%;
     border-bottom: 1px solid #ddd;
 }
 scroll-view {
-    height: 93%;
+    height: 92%;
 }
 .icon-buoumaotubiao20{
     position: absolute;
@@ -81,5 +81,15 @@ scroll-view {
     right: 0;
     padding: 20rpx;
     font-size: 28rpx;
+}
+.share_con{
+    padding: 10rpx;
+}
+.share_con view{
+    margin-bottom: 10rpx;
+    padding: 10rpx 0;
+    text-align: center;
+    border: 1px solid #f60;
+    border-radius: 10rpx;
 }
 /* 弹窗 end */

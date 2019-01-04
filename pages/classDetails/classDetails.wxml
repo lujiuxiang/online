@@ -13,7 +13,7 @@
 <!-- 顶部视频标签 end -->
 
 <!-- 内容部分 start -->
-<view class='content'>
+<view class='content' style='margin-bottom: {{margin_bottom}}'>
     <!-- 课程信息 start -->
     <view class='class_info'>
         <view>

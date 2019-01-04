@@ -23,44 +23,17 @@
 
 <!-- 弹窗 start -->
 <view class='pop_bg' wx:if="{{isBlock}}" bindtap='showPop'></view>
-<view class='pop' wx:if="{{isBlock}}">
+<view class='pop' wx:if="{{isBlock}}" animation='{{animationData}}'>
     <view class='title'>
         积分详情 
         <text class='iconfont icon-buoumaotubiao20' bindtap='showPop'></text>
     </view>
     <scroll-view scroll-y>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
-        <view>1</view>
+        <view class='share_con'>
+            <view>分享至10位好友并注册，可获得20积分</view>
+            <view>分享至20位好友并注册，可获得45积分</view>
+            <view>分享至30位好友并注册，可获得80积分</view>
+        </view>
     </scroll-view>
 </view>
 <!-- 弹窗 end -->

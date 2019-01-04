@@ -9,6 +9,8 @@ Page({
         videoimage: "block", //默认显示封面
         tab_image: "block",//默认显示封面播放按钮
         block: false,
+        is_show: false, //是否显示底部预约按钮
+        margin_bottom: 0,
         starttime: "2018-12-12",
         endtime: "2018-12-30",
         addr: "待定",
@@ -23,7 +25,8 @@ Page({
     onLoad: function (options) {
         if (options.is_show) {
             this.setData({
-                block: true
+                block: true,
+                margin_bottom: "110rpx",
             })
         } else {
             this.setData({
