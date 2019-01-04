@@ -28,6 +28,12 @@ Page({
                 url: "../connection/connection"
             },
             {
+              icon: "iconfont icon-jiaoyichenggong",
+              text: "我的积分",
+              color: "#59b549",
+              url: "../myIntegral/myIntegral"
+            },
+            {
                 icon: "iconfont icon-jiaoyichenggong",
                 text: "交易记录",
                 color: "#59b549",

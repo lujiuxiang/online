@@ -318,7 +318,7 @@ Page({
     // 跳转课程详情页
     goClassDetails(e){
         wx.navigateTo({
-            url: '../classDetails/classDetails?is_show=show',
+            url: '../publicClassDel/publicClassDel',
         })
     }
 })

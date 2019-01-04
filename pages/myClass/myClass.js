@@ -80,7 +80,7 @@ Page({
     goClassDetails(e) {
         console.log(e.currentTarget.dataset.index)
         wx.navigateTo({
-            url: '../classDetails/classDetails',
+            url: '../publicClassDel/publicClassDel',
         })
     },
 

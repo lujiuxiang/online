@@ -1,0 +1,43 @@
+/* pages/myIntegral/myIntegral.wxss */
+/* 顶部信息 */
+.top{
+  display: flex;
+  justify-content: space-around;
+  padding: 60rpx 0;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #e800ac;
+}
+.top view{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.top .myMark{
+  font-size: 60rpx;
+}
+.top text{
+  font-size: 32rpx;
+}
+.top .bot{
+  position: absolute;
+  bottom: 0;
+}
+.top .icon-youjiantou{
+  font-size: 24rpx;
+}
+/* 顶部信息 */
+
+/* 兑换规则 / 兑换信息 */
+.p_20{
+  padding: 0 30rpx;
+  font-size: 24rpx;
+}
+.p_20 .fz_20{
+  font-size: 32rpx;
+  padding: 22rpx 0;
+}
+.p_20 > view:not(.fz_20){
+  padding: 5rpx 0;
+  text-indent: 20rpx;
+}

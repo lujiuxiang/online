@@ -1,30 +1,4 @@
 /* pages/myConnection/myConnection.wxss */
-
-.top{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 60rpx 0;
-    font-size: 28rpx;
-    color: #fff;
-    background-color: #e800ac;
-}
-.top view{
-    width: 100%;
-    text-align: center;
-}
-.top text{
-    font-size: 32rpx;
-}
-.icon-wenhao{
-    position: absolute;
-    right: 30rpx;
-    top: 30rpx;
-    padding: 10rpx;
-}
-
-
-
 .list{
     display: flex;
     align-items: center;
@@ -46,50 +20,3 @@
     font-size: 26rpx;
 }
 
-/* 弹窗 start */
-.pop_bg{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .3);
-}
-.pop{
-    position: fixed;
-    top: 0;
-    margin: 15% 10%;
-    width: 80%;
-    height: 70%;
-    background-color: #fff;
-    border-radius: 10rpx;
-    font-size: 28rpx;
-}
-.pop .title{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8%;
-    border-bottom: 1px solid #ddd;
-}
-scroll-view {
-    height: 92%;
-}
-.icon-buoumaotubiao20{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 20rpx;
-    font-size: 28rpx;
-}
-.share_con{
-    padding: 10rpx;
-}
-.share_con view{
-    margin-bottom: 10rpx;
-    padding: 10rpx 0;
-    text-align: center;
-    border: 1px solid #f60;
-    border-radius: 10rpx;
-}
-/* 弹窗 end */

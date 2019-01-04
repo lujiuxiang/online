@@ -53,6 +53,7 @@
 }
 /* 课程名称 end */
 /* 讲师描述 start */
+
 .teachers_del_wrap{
     text-align: center;
     padding: 30rpx 0 10rpx;

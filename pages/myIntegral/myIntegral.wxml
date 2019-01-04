@@ -1,0 +1,31 @@
+<!--pages/myIntegral/myIntegral.wxml-->
+<!-- 顶部信息 start -->
+<view class='top'>
+    <view>
+      <text class='myMark'>{{myMark}}</text>
+      <view>我的积分</view> 
+    </view>
+    <view>
+      <view class='bot' bindtap='goClass'>立即兑换
+        <text class='iconfont icon-youjiantou'></text>
+      </view>
+    </view>
+</view>
+<!-- 顶部信息 end -->
+<!-- 兑换规则 -->
+<view class='p_20'>
+  <view class='fz_20'>兑换规则</view>
+  <view>一、{{cj_mark}}积分可兑换初级单节付费课程</view>
+  <view>二、{{zj_mark}}积分可兑换中级单节付费课程</view>
+  <view>三、{{gj_mark}}积分可兑换高级单节付费课程</view>
+</view>
+<!-- 兑换规则 -->
+<!-- 兑换说明 -->
+<view class='p_20'>
+  <view class='fz_20'>兑换说明</view>
+  <block wx:for="{{answer}}" wx:key="index">
+    <view>问：{{item.ask}}</view>
+    <view>答：{{item.answer}}</view>
+  </block>
+</view>
+<!-- 兑换说明 -->
