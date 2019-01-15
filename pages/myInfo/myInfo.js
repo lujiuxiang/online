@@ -1,17 +1,17 @@
 // pages/myInfo/myInfo.js
-let util = require('../../utils/util.js');
+let requestData = require('../../utils/util.js');
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        images: "http://imyu.top/xcx/username.png",
-        realname: "冯提莫",
-        idCard: "220323199911231234",
-        phone: "13333333333",
-        ID: "123432234",
-        tj: "宋老师",
+        images: "",
+        realname: "",
+        idCard: "",
+        phone: "",
+        ID: "",
+        tj: "",
         actionSheetHidden: true,
         actionSheetItems: [
             { bindtap: 'chooseImage', txt: '更换头像' },
@@ -111,7 +111,23 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var that = this
+        requestData.postData({
+            url: "user/info",
+            params:{
+                openid: getApp().globalData.openid
+            },
+            do_success: function(res){
+                that.setData({
+                    images: res.data.xximage,
+                    realname: res.data.nickname,
+                    idCard: res.data.idcard,
+                    phone: res.data.phone,
+                    ID: res.data.id,
+                    tj: res.data.parent,
+                })
+            }
+        })
     },
     // 更改姓名
     changeRealName(e){

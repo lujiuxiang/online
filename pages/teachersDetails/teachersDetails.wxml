@@ -1,13 +1,13 @@
 
 <!-- 顶部视频标签 start -->
 <view class='videoWrap'>
-    <video id="myVideo" class="myVideo" src="{{video_src}}" custom-cache="{{false}}">
+    <video id="myVideo" class="myVideo" wx:if="{{video_src}}" src="{{video_src}}" custom-cache="{{false}}">
     </video>
     <cover-view class="controls" style="display:{{tab_image}}; width:100%;">
-        <cover-image src="http://imyu.top/xcx/video_bg.png"  />
+        <cover-image wx:if="{{video_bg}}" src="{{video_bg}}"  />
     </cover-view>
     <cover-view class="play" style="display:{{tab_image}};z-index:200;">
-        <cover-image bindtap="bindplay" src="http://imyu.top/xcx/video_play.png" style="width:160rpx;" />
+        <cover-image bindtap="bindplay" src="../../images/video_play.png" style="width:160rpx;" />
     </cover-view>
 </view>
 <!-- 顶部视频标签 end -->
@@ -18,21 +18,18 @@
     <view class='con_top'>
         <view class='class_title'>
             <text class='kc_bg'>课程</text>
-            <text class='kc_title'>课程名称</text>
+            <text class='kc_title'>{{class_title}}</text>
         </view>
         <view class='class_bot'>
-            <text class='time'>2018-12-10 22:25</text>
-            <text class='rq'>人气：99999</text>
+            <text class='time'>{{ctime}}</text>
+            <text class='rq'>人气：{{renqi}}</text>
         </view>
     </view>
     <!-- 课程名称 end -->
     <!-- 讲师描述 start -->
     <view class='teachers_del_wrap'>
-        <view class='title'>讲师描述</view>
-        <image src="http://imyu.top/xcx/teacher2.png"></image>
         <view class='teacher_del'>
-            开创第一人、新销售、新组织、新模式、25年商业、资本实战结晶
-            开创第一人、新销售、新组织、新模式、25年商业、资本实战结晶
+            <rich-text nodes="{{teacher_del}}"></rich-text>
         </view>
     </view>
     <!-- 讲师描述 end -->

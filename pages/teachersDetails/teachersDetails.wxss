@@ -69,7 +69,6 @@
 .teachers_del_wrap .teacher_del{
     padding: 0 50rpx;
     text-align: left;
-    text-indent: 2em;
 }
 /* 讲师描述 end */
 /* 热门评论 start */

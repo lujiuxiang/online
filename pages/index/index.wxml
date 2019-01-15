@@ -23,7 +23,7 @@
                                     <swiper indicator-dots="{{indicatorDotsImg}}" autoplay="{{autoplayImg}}" interval="{{intervalImg}}" duration="{{durationImg}}" circular="true" indicator-active-color="#34a3eb">
                                         <block wx:for="{{blogLists}}" wx:key="index" wx:for-item="item">
                                             <swiper-item>
-                                                <image src="{{item.src}}" class="slide-image" width="355" height="150"/>
+                                                <image src="{{item.xximage}}" class="slide-image" width="355" height="150"/>
                                             </swiper-item>
                                         </block>
                                     </swiper>
@@ -33,8 +33,8 @@
                                     <!-- 首页轮播图下 导航 start -->
                                     <view class='bot_nav'>
                                         <block wx:for="{{bot_nav}}" wx:key="index">
-                                            <view bindtap='goSecond' data-url="{{item.url}}">
-                                                <image src='{{item.src}}'></image>
+                                            <view bindtap='goSecond'  data-id="{{item.id}}">
+                                                <image src='{{item.xximage}}'></image>
                                                 <view class='b_n_title'>{{item.title}}</view>
                                             </view>
                                         </block>
@@ -46,8 +46,8 @@
                                     <view class='recommend_content'>
                                         <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;height: 230rpx;">
                                             <block wx:for="{{recommendArr}}" wx:key="index">
-                                                <view bindtap='goTeachersDetails' data-index='{{index}}'>
-                                                    <image src='{{item.src}}'></image>
+                                                <view bindtap='goTeachersDetails' data-id="{{item.id}}" data-index='{{index}}'>
+                                                    <image src='{{item.xximage}}'></image>
                                                     <text>{{item.title}}</text>
                                                 </view>
                                             </block>
@@ -56,14 +56,14 @@
                                     </view>
                                     <!-- 精品推荐 end -->
                                     <!-- 课程列表 start -->
-                                    <view class='class_list index_class' bindtap='goClassDetails'>
-                                        <block wx:for="{{class_list}}" wx:key="index">
-                                            <view>
-                                                <image src='{{item.src}}'></image>
+                                    <view class='class_list index_class' >
+                                        <block wx:for="{{index_class_list}}" wx:key="index">
+                                            <view bindtap='goClassDetails' data-id="{{item.id}}">
+                                                <image src='{{item.xximage}}'></image>
                                                 <view class='c_l_right'>
                                                     <view class='c_l_title'>{{item.title}}</view>
-                                                    <view class='ddd text_hidden'>{{item.details}}</view>
-                                                    <view class='ddd'>人气:{{item.rq}} <text>立即观看</text></view>
+                                                    <view class='ddd text_hidden'>{{item.jianjie}}</view>
+                                                    <view class='ddd'>人气:{{item.renqi}} <text>立即观看</text></view>
                                                 </view>
                                             </view>
                                         </block>
@@ -78,14 +78,14 @@
                     <swiper-item>
                         <scroll-view class="layout-lists subscribe-content" scroll-y>
                             <!-- 课程列表 start -->
-                            <view class='class_list index_class' bindtap='goClassDetails'>
+                            <view class='class_list index_class'>
                                 <block wx:for="{{class_list}}" wx:key="index">
-                                    <view>
-                                        <image src='{{item.src}}'></image>
+                                    <view bindtap='goClassDetails' data-id="{{item.id}}">
+                                        <image src='{{item.xximage}}'></image>
                                         <view class='c_l_right'>
                                             <view class='c_l_title'>{{item.title}}</view>
-                                            <view class='ddd text_hidden'>{{item.details}}</view>
-                                            <view class='ddd'>人气:{{item.rq}} <text>立即观看</text></view>
+                                            <view class='ddd text_hidden'>{{item.jianjie}}</view>
+                                            <view class='ddd'>人气:{{item.renqi}} <text>立即观看</text></view>
                                         </view>
                                     </view>
                                 </block>
@@ -97,12 +97,8 @@
                     <!-- 平台介绍 start -->
                     <swiper-item>
                         <scroll-view class="layout-lists subscribe-content" scroll-y>
-                            <view class='index_recommend' bindtap='goTeachersDetails'>
-                                <image src='{{aboutUS_img}}' mode='widthFix'></image>
-                                <view>
-                                    <view class='title'>平台介绍</view>
-                                    <view class='del'>{{about_del}}</view>
-                                </view>
+                            <view class='index_recommend'>
+                                <rich-text nodes="{{about_del}}"></rich-text>
                             </view>
                         </scroll-view>
                     </swiper-item>
@@ -113,8 +109,8 @@
                             <view class='index_notice'>
                                 <block wx:for="{{notice}}" wx:key="index" wx:for-item="item">
                                     <view bindtap='goNoticeDetails' data-item="{{item}}">
-                                        <image src='{{item.src}}'></image>
-                                        <view class='n_text'>{{item.details}}</view>
+                                        <image src='{{item.xximage}}'></image>
+                                        <view class='n_text'>{{item.title}}</view>
                                         <text class='iconfont icon-youjiantou'></text>
                                     </view>
                                 </block>

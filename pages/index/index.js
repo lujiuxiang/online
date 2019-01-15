@@ -1,4 +1,6 @@
 //index.js
+var requestData = require("../../utils/util.js");
+var app = getApp();
 //获取应用实例
 Page({
     data: {
@@ -21,281 +23,165 @@ Page({
             },
         ],
         // 首页内容 轮播图下 导航
-        bot_nav: [
-            {
-                title:"我的课程",
-                src: "http://imyu.top/xcx/nav_kc.png",
-                url: "../myClass/myClass"
-            },
-            {
-                title:"讲师介绍",
-                src: "http://imyu.top/xcx/nav_teacher.png",
-                url: "../teachersList/teachersList"
-            },
-            {
-                title:"人脉圈",
-                src: "http://imyu.top/xcx/nav_rm.png",
-                url: "../connection/connection"
-            },
-            {
-                title:"地图导航",
-                src: "http://imyu.top/xcx/nav_map.png",
-                url: ""
-            },
-        ],
+        bot_nav: [],
         // 精品推荐
-        recommendArr: [
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            {
-                src: "http://imyu.top/xcx/kc_teacher.png",
-                title: "经济型网红训练师"
-            },
-            
-        ],
+        recommendArr: [],
         // 首页内容 课程列表
-        class_list: [
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶 25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-        ],
+        index_class_list: [],
         // 首页内容 平台介绍
-        aboutUS_img: "http://imyu.top/xcx/aboutUs.png",
-        about_del: "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
+        about_del: "",
         // 首页内容 通知公告
-        notice: [
-            {
-                src: "http://imyu.top/xcx/notice1.png",
-                details: "网红通知",
-                time: "2018-12-12",
-                info: "通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情"
-            },
-            {
-                src: "http://imyu.top/xcx/notice2.png",
-                details: "网红通知",
-                time: "2018-12-12",
-                info: "通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情"
-            },
-            {
-                src: "http://imyu.top/xcx/notice1.png",
-                details: "网红通知",
-                time: "2018-12-12",
-                info: "通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情"
-            },
-            {
-                src: "http://imyu.top/xcx/notice2.png",
-                details: "网红通知",
-                time: "2018-12-12",
-                info: "通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情"
-            },
-            {
-                src: "http://imyu.top/xcx/notice1.png",
-                details: "网红通知",
-                time: "2018-12-12",
-                info: "通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情通知公告详情"
-            },
-        ],
+        notice: [],
         // 首页内容 筛选
-        teachersArr: [
-            {
-                id: "1",
-                teacher: "老师1"
-            },
-            {
-                id: "2",
-                teacher: "老师2"
-            },
-            {
-                id: "3",
-                teacher: "老师3"
-            },
-            {
-                id: "4",
-                teacher: "老师4"
-            },
-            {
-                id: "5",
-                teacher: "老师5"
-            },
-            {
-                id: "6",
-                teacher: "老师6"
-            },
-            {
-                id: "7",
-                teacher: "老师7"
-            },
-        ],
+        teachersArr: [],
         typeArr: [
             {
                 id: "1",
-                text: "网红营销1"
+                status: 1,
+                text: "公开课程"
             },
             {
                 id: "2",
-                text: "网红营销2"
+                status: 2,
+                text: "初级课程"
             },
             {
                 id: "3",
-                text: "网红营销3"
+                status: 3,
+                text: "中级课程"
             },
             {
                 id: "4",
-                text: "网红营销4"
-            },
-            {
-                id: "5",
-                text: "网红营销5"
-            },
-            {
-                id: "6",
-                text: "网红营销6"
-            },
-            {
-                id: "7",
-                text: "网红营销7"
-            },
-            {
-                id: "8",
-                text: "网红营销8"
-            },
-            {
-                id: "9",
-                text: "网红营销9"
-            },
+                status: 4,
+                text: "高级课程"
+            }
         ],
         teacherText: "老师名称",
         typeText: "选择类型",
         filter_index_1: "",
         filter_index_2: "",
-
-        blogLists: [
-            {
-                src: "http://imyu.top/xcx/index_banner.png"
-            },
-            {
-                src: "http://imyu.top/xcx/index_banner.png"
-            },
-            {
-                src: "http://imyu.top/xcx/index_banner.png"
-            },
-            {
-                src: "http://imyu.top/xcx/index_banner.png"
-            },
-            {
-                src: "http://imyu.top/xcx/index_banner.png"
-            },
-        ],
+        // 首页轮播图
+        blogLists: [],
         indicatorDotsImg: true,
         autoplayImg: true,
         intervalImg: 5000,
         durationImg: 300,
-        isSelect: 0
+        isSelect: 0,
+        // 公开课程 课程列表
+        class_list: []
     },
     onLoad: function () {
+        var that = this;
+        app.getLogin().then(function (res) {
+            wx.getUserInfo({
+                success: res => {
+                    var openid = getApp().globalData.openid
+                    // 可以将 res 发送给后台解码出 unionId
+                    getApp().globalData.userInfo = res.userInfo
+                    if (openid) {
+                        requestData.postData({
+                            url: "user/member_add",
+                            params: {
+                                openid: getApp().globalData.openid,
+                                nickname: getApp().globalData.userInfo.nickName,
+                                xximage: getApp().globalData.userInfo.avatarUrl,
+                                sex: getApp().globalData.userInfo.gender
+                            },
+                            do_success: function (res) {
+                                console.log(res.data)
+                            }
+                        })
+                    }
+                },
+                fail: function (err) {
+                    wx.redirectTo({
+                        url: '../tarBar/tarBar',
+                    })
+                }
+            })
+        })
 
+
+        // 请求首页banner
+        requestData.postData({
+            url: "show",
+            do_success: function(res){
+                that.setData({
+                    blogLists: res.data.banner,
+                    bot_nav: res.data.nav
+                })
+            }
+        })
+        // 请求首页公开课 公开课堂
+        requestData.postData({
+            url: "show/wxclass",
+            do_success: function(res){
+                that.setData({
+                    index_class_list: res.data.sygkk,
+                    class_list: res.data.gkk,
+                    recommendArr: res.data.tuijian,
+                })
+            }
+        })
+
+        
+    },
+    onShow: function(){
+
+    },
+
+    // 解析富文本nbsp等字符
+    escape2Html: function (str) {
+        var arrEntities = { 'lt': '<', 'gt': '>', 'nbsp': ' ', 'amp': '&', 'quot': '"' };
+        return str.replace(/&(lt|gt|nbsp|amp|quot);/ig, function (all, t) { return arrEntities[t]; });
     },
     
     // 切换tab导航
     changeTab: function (e) {
         let isSelect = e.currentTarget.dataset.type;
-        console.log(isSelect)
         this.setData({
             isSelect: isSelect
         })
     },
     // 下面滑动时切换tab导航
     swiperChange: function (e) {
-        console.log(e);
+        let isSelect = e.detail.current;
+        let that = this
+        // 请求平台介绍数据
+        if(isSelect === 2){
+            requestData.postData({
+                url: "show/pingtai",
+                do_success: function (res) {
+                    that.setData({
+                        about_del: that.escape2Html(res.data)
+                    })
+                }
+            })
+        }
+        // 请求通知公告数据
+        if(isSelect === 3){
+            requestData.postData({
+                url: "show/notice",
+                do_success: function (res) {
+                    that.setData({
+                        notice: res.data
+                    })
+                }
+            })
+        }
+        // 请求筛选数据
+        if(isSelect === 4){
+            requestData.getData({
+                url: "show/wxclass_search",
+                do_success: function (res) {
+                    that.setData({
+                        teachersArr: res.data
+                    })
+                }
+            })
+        }
         this.setData({
-            isSelect: e.detail.current
+            isSelect: isSelect
         })
     },
     // 首页筛选
@@ -308,32 +194,46 @@ Page({
     },
     // 地图导航
     goSecond(e){
-        let url = e.currentTarget.dataset.url;
-        if(!url){
-            wx.openLocation({
-                longitude: 125.260973,
-                latitude: 43.826905,
-                name: '大圣咖汇众创空间',
-                address: '高新开发区硅谷西街与磐古路交汇南50米'
-            })
-            return
+        let id = e.currentTarget.dataset.id;
+        switch(id){
+            case 3: 
+                wx.navigateTo({
+                    url: "../myClass/myClass",
+                })
+                break
+            case 4:
+                wx.navigateTo({
+                    url: "../teachersList/teachersList",
+                })
+                break
+            case 5:
+                wx.navigateTo({
+                    url: "../connection/connection",
+                })
+                break
+            case 6:
+                wx.openLocation({
+                    longitude: 125.260973,
+                    latitude: 43.826905,
+                    name: '大圣咖汇众创空间',
+                    address: '高新开发区硅谷西街与磐古路交汇南50米'
+                })
+                break
+            default: 
+                console.log("没有id，无法跳转")
+                break
         }
-        wx.navigateTo({
-            url: url,
-        })
     },
     // 跳转老师页面
     goTeachersDetails(e){
-        console.log(e.currentTarget.dataset.index)
         wx.navigateTo({
-            url: '../teachersDetails/teachersDetails',
+            url: '../teachersDetails/teachersDetails?id=' + e.currentTarget.dataset.id,
         })
     },
     // 跳转课程详情页面
     goClassDetails(e){
-        console.log(e.currentTarget.dataset.index)
         wx.navigateTo({
-            url: '../publicClassDel/publicClassDel',
+            url: '../publicClassDel/publicClassDel?id=' + e.currentTarget.dataset.id,
         })
     },
     // 跳转通知公告页面
@@ -346,32 +246,30 @@ Page({
     // 筛选 老师
     bindPickerChange(e){
         this.setData({
-            filter_index_1: this.data.teachersArr[e.detail.value].id,
+            filter_index_1: this.data.teachersArr[e.detail.value].teacher,
             teacherText: this.data.teachersArr[e.detail.value].teacher
         })
     },
     // 筛选 类型
     bindPickerChange2(e){
         this.setData({
-            filter_index_2: this.data.typeArr[e.detail.value].id,
+            filter_index_2: this.data.typeArr[e.detail.value].status,
             typeText: this.data.typeArr[e.detail.value].text
         })
     },
     // 跳转到 选择老师的课程列表页
     goFiflterTeacher(){
         let teacher_id = this.data.filter_index_1;
-        let type_id = this.data.filter_index_2
-        // 如果没选择老师或类型 不请求数据
-        if (teacher_id === "" || type_id === ""){
+        let type_status = this.data.filter_index_2;
+        if(teacher_id === "" && type_status === ""){
             wx.showToast({
-                title: '请选择老师或类型',
-                icon: 'none',
-                duration: 2000
+                title: '至少选择一种方式查询',
+                icon: "none"
             })
             return
         }
         wx.navigateTo({
-            url: '../fiflterTeacher/fiflterTeacher',
+            url: '../fiflterTeacher/fiflterTeacher?teacher='+ teacher_id + '&status='+ type_status,
         })
     }
 })

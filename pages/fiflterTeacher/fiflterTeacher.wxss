@@ -11,6 +11,7 @@
 .class_list>view{
     display: flex;
     padding: 20rpx 0;
+    width: 100%;
     border-bottom: 1px solid #ddd;
 }
 .class_list .c_l_right{
@@ -36,7 +37,7 @@
 }
 .class_list .c_l_right .ddd text{
     position: absolute;
-    bottom: 0;
+    bottom: -4rpx;
     right: 0;
     padding: 5rpx 20rpx;
     color: #fff;

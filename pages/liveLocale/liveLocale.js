@@ -1,4 +1,5 @@
 // pages/liveLocale/liveLocale.js
+var requestData = require("../../utils/util.js")
 Page({
 
     /**
@@ -14,42 +15,7 @@ Page({
                 title: "大圣咖汇",
                 type: "公开课",
                 teacher: "韩博艺",
-                time: "2018-12-20 8:00 -- 12:30",
-                addr: "长春市二道区某某路"
-            },
-            {
-                title: "大圣咖汇",
-                type: "公开课",
-                teacher: "韩博艺",
-                time: "2018-12-20 8:00 -- 12:30",
-                addr: "长春市二道区某某路"
-            },
-            {
-                title: "大圣咖汇",
-                type: "公开课",
-                teacher: "韩博艺",
-                time: "2018-12-20 8:00 -- 12:30",
-                addr: "长春市二道区某某路"
-            },
-            {
-                title: "大圣咖汇",
-                type: "公开课",
-                teacher: "韩博艺",
-                time: "2018-12-20 8:00 -- 12:30",
-                addr: "长春市二道区某某路"
-            },
-            {
-                title: "大圣咖汇",
-                type: "公开课",
-                teacher: "韩博艺",
-                time: "2018-12-20 8:00 -- 12:30",
-                addr: "长春市二道区某某路"
-            },
-            {
-                title: "大圣咖汇",
-                type: "公开课",
-                teacher: "韩博艺",
-                time: "2018-12-20 8:00 -- 12:30",
+                time: "2018-12-20 8:00 -- 12:30:23",
                 addr: "长春市二道区某某路"
             },
         ]
@@ -59,7 +25,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        requestData.postData({
+            url:"",
+            do_success: function(){
+
+            }
+        })
     },
     //点击播放按钮，封面图片隐藏,播放视频
     bindplay: function (e) {

@@ -1,54 +1,59 @@
 // pages/membership/membership.js
+var requestData = require("../../utils/util.js")
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        my_img: "http://imyu.top/xcx/username.png",
-        realname: "冯提莫",
-        memberType: "初级会员",
-        why_list: [
-            {
-                id: "1",
-                text: "如何成为会员?",
-                result: "12312312321"
-            },
-            {
-                id: "2",
-                text: "会员如何升级?",
-                result: "1231231232112312312321123123123211231231232112312312321"
-            },
-            {
-                id: "3",
-                text: "会员政策",
-                result: "12312312321"
-            },
-        ],
-        list: [
-            {
-                id: "1",
-                level: "初级VIP会员",
-                money: "99"
-            },
-            {
-                id: "2",
-                level: "中级VIP会员",
-                money: "999"
-            },
-            {
-                id: "3",
-                level: "高级VIP会员",
-                money: "9999"
-            }
-        ]
+        my_img: "",
+        realname: "",
+        vip: "",
+        why_list: [],
+        list: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var that = this
+        requestData.postData({
+            url: "user/info",
+            params: {
+                openid: getApp().globalData.openid
+            },
+            do_success: function(res){
+                console.log(res)
+                that.setData({
+                    why_list: res.data.help,
+                    vip: res.data.vipstatus,
+                    my_img: res.data.xximage,
+                    realname: res.data.nickname,
+                    list: [
+                        {
+                            id: "1",
+                            level: "初级VIP会员",
+                            money: res.data.vip1
+                        },
+                        {
+                            id: "2",
+                            level: "中级VIP会员",
+                            money: res.data.vip2
+                        },
+                        {
+                            id: "3",
+                            level: "高级VIP会员",
+                            money: res.data.vip3
+                        }
+                    ]
+                })
+            }
+        })
+    },
+    go_pay(e){
+        let money = e.currentTarget.dataset.money
+        console.log(money)
     },
 
     /**

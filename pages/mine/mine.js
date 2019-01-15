@@ -1,4 +1,6 @@
 // pages/mine/mine.js
+var app = getApp();
+var requestData = require("../../utils/util.js")
 Page({
 
     /**
@@ -7,7 +9,9 @@ Page({
     data: {
         login: null,
         title_img: "http://imyu.top/xcx/username.png",
-        username: "冯提莫",
+        username: "",
+        vip: "",
+        money: "",
         list: [
             {
                 icon: "iconfont icon-renwu-tuandui",
@@ -55,7 +59,7 @@ Page({
         let that = this;
         if(!url){
             wx.makePhoneCall({
-                phoneNumber: '17519404549', //此号码并非真实电话号码，仅用于测试
+                phoneNumber: '13333333333', //此号码并非真实电话号码，仅用于测试
                 success: function () {
                     console.log("拨打电话成功！")
                 },
@@ -65,9 +69,16 @@ Page({
             })
             return
         }
-        wx.navigateTo({
-            url: url,
-        })
+        if (getApp().globalData.isLogin) {
+            wx.navigateTo({
+                url: url,
+            })
+        } else {
+            wx.showToast({
+                title: '请登录后查看',
+                icon: "none"
+            })
+        }
     },
     // 退出登录
     loginout(){
@@ -79,11 +90,12 @@ Page({
             success: function (res) {
                 if (res.confirm) {
                     return new Promise((resolve, rej) => {
-                        wx.clearStorageSync("logincode")
                         resolve(res)
                     }).then(res => {
+                        wx.clearStorageSync("isLogin")
+                        getApp().globalData.isLogin = false
                         that.setData({
-                            login: wx.getStorageSync("logincode")
+                            login: false
                         })
                     }).catch(rej => {
                         console.log(rej)
@@ -94,9 +106,16 @@ Page({
     },
     // 跳转我的信息
     goMyInfo(){
-        wx.navigateTo({
-            url: '../myInfo/myInfo',
-        })
+        if (getApp().globalData.isLogin){
+            wx.navigateTo({
+                url: '../myInfo/myInfo',
+            })
+        }else{
+            wx.showToast({
+                title: '请登录后查看',
+                icon: "none"
+            })
+        }
     },
     // 跳转 登录页
     go_login(){
@@ -114,6 +133,33 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        var that = this;
+        // 获取是否登录
+        let isLogin = wx.getStorageInfoSync("isLogin")
+        // 如果是登录状态 就从赋值给app.js的isLoign
+        isLogin ? app.globalData.isLogin = isLogin : "";
+        if (app.globalData.isLogin){
+            requestData.postData({
+                url: "user/info",
+                params: {
+                    openid: getApp().globalData.openid
+                },
+                do_success: function(res){
+                    console.log(res)
+                    that.setData({
+                        login: true,
+                        title_img: res.data.xximage,
+                        username: res.data.nickname,
+                        money: res.data.money,
+                        vip: res.data.vipstatus
+                    })
+                }
+            })
+        }else{
+            that.setData({
+                title_img: getApp().globalData.userInfo.avatarUrl
+            })
+        }
     },
 
     /**
@@ -127,11 +173,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        // 检测进入页面时 是否是登陆状态
-        let logincode = wx.getStorageSync("logincode")
-        this.setData({
-            login: logincode
-        })
+        
     },
 
     /**

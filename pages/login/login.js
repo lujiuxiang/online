@@ -1,45 +1,54 @@
 // pages/login/login.js
+var requestData = require("../../utils/util.js");
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        title_img: "http://imyu.top/xcx/username.png",
+        title_img: "",
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            title_img: getApp().globalData.userInfo.avatarUrl
+        })
     },
 
     // 登录
     formSubmit: function (e) {
         let that = this
-        console.log('form发生了submit事件，携带数据为：', e.detail.value);
-
-        // this.setData({
-        //     login: 1
-        // })
-        wx.login({
-            success(res) {
-                if (res.code) {
-                    // 发起网络请求
-                    // wx.request({
-                    //     url: 'https://test.com/onLogin',
-                    //     data: {
-                    //         code: res.code
-                    //     }
-                    // })
-                    wx.setStorageSync("logincode", res.code)
-
-                    wx.switchTab({
-                        url: "../mine/mine"
+        requestData.postData({
+            url: "user/login",
+            params: {
+                phone: e.detail.value.user,
+                pass: e.detail.value.password,
+            },
+            do_success: function(res){
+                if(res.data.code != -1){
+                    getApp().globalData.isLogin = res.data.code;
+                    wx.setStorageSync("isLogin", res.data.code)
+                    wx.showToast({
+                        title: res.data.msg,
                     })
-                } else {
-                    console.log('登录失败！' + res.errMsg)
+                    setTimeout(function(){
+                        wx.switchTab({
+                            url: '../mine/mine',
+                            success: function(){
+                                var page = getCurrentPages().pop();
+                                if(!page)return;
+                                page.onLoad()
+                            }
+                        })
+                    },500)
+                }else{
+                    wx.showToast({
+                        title: res.data.msg,
+                        icon: "none"
+                    })
                 }
             }
         })

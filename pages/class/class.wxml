@@ -19,16 +19,16 @@
                         <swiper-item>
                             <scroll-view scroll-y>
                                 <block wx:for="{{item}}" wx:key="index">
-                                    <view class="layout-tab-lists" bindtap='goClassDetails'>
-                                        <image src='{{item.src}}'></image>
+                                    <view class="layout-tab-lists" bindtap='goClassDetails' data-id="{{item.id}}">
+                                        <image src='{{item.xximage}}'></image>
                                         <view class='right'>
                                             <view class='title'>{{item.title}}</view>
                                             <view class='watched'>
-                                                已有{{item.watched}}人观看过
-                                                <text wx:if="{{!item.isMember}}">￥{{item.money}}</text>
+                                                已有{{item.watch ? item.watch : 0}}人观看过
+                                                <text wx:if="{{!item.isMember}}">￥{{item.mfree}}</text>
                                             </view>
                                             <view class='mark'>
-                                                <text wx:if="{{!item.isMember}}">{{item.mark}}积分观看</text>
+                                                <text wx:if="{{!item.isMember}}">{{item.jfree}}积分观看</text>
                                             </view>
                                             <view class='ismember'>
                                                 <text wx:if="{{item.isMember}}">已开通会员 免费</text>

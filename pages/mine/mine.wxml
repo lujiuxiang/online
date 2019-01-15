@@ -6,7 +6,7 @@
         <image src='{{title_img}}'></image>
         <view class='t_right'>
             <view class='username'>{{username}}</view>
-            <view class='vip'>vip学员</view>
+            <view class='vip'>{{vip}} <view>余额：{{money}}</view></view>
             <text class='iconfont icon-youjiantou'></text>
         </view>
     </view>

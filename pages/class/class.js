@@ -1,4 +1,5 @@
 //index.js
+var requestData = require("../../utils/util.js")
 //获取应用实例
 Page({
     data: {
@@ -16,309 +17,45 @@ Page({
         ],
         isSelect: 0,
         // 课程列表
-        list: [
-            [
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程初级课程初级课程初级课程初级课程初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    mark: "70",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    mark: "70",
-                    money: "99",
-                    mark: "80",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    mark: "70",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    mark: "70",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    mark: "70",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    mark: "70",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    mark: "70",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "初级课程",
-                    watched: "666",
-                    money: "99",
-                    mark: "80",
-                    isMember: false,
-                },
-            ],
-            [
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "中级课程",
-                    watched: "666",
-                    money: "299",
-                    mark: "90",
-                    isMember: false,
-                },
-            ],
-            [
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: false,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-                {
-                    src: "http://imyu.top/xcx/teacher3.png",
-                    title: "高级课程",
-                    watched: "666",
-                    money: "399",
-                    mark: "90",
-                    isMember: true,
-                },
-            ],
-        ]
+        list: []
     },
     onLoad: function () {
-
+        var that = this
+        // 请求首页banner
+        requestData.postData({
+            url: "show/wxclass",
+            do_success: function (res) {
+                console.log(res)
+                var arr = []
+                arr.push(res.data.cj)
+                arr.push(res.data.zj)
+                arr.push(res.data.gj)
+                that.setData({
+                    list: arr
+                })
+            }
+        })
     },
 
     // 切换tab导航
     changeTab: function (e) {
         let isSelect = e.currentTarget.dataset.type;
-        console.log(isSelect)
         this.setData({
             isSelect: isSelect
         })
     },
     // 下面滑动时切换tab导航
     swiperChange: function (e) {
+        let isSelect = e.detail.current
         console.log(e);
         this.setData({
-            isSelect: e.detail.current
+            isSelect: isSelect
         })
     },
     // 跳转课程详情页
     goClassDetails(e){
         wx.navigateTo({
-            url: '../publicClassDel/publicClassDel',
+            url: '../publicClassDel/publicClassDel?id='+e.currentTarget.dataset.id,
         })
     }
 })

@@ -1,4 +1,5 @@
 // pages/fiflterTeacher/fiflterTeacher.js
+var requestData = require("../../utils/util.js");
 Page({
 
     /**
@@ -6,80 +7,34 @@ Page({
      */
     data: {
         // 课程列表
-        class_list: [
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶 25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-            {
-                src: "http://imyu.top/xcx/teacher.png",
-                title: "25年商业  资本实战结晶",
-                details: "你还在为因为有才艺没有粉丝苦恼吗？想成为万人瞩目网络红人？那你就来！！！",
-                rq: "1325"
-            },
-        ],
+        class_list: [],
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.log(options)
+        var that = this
+        // 请求首页banner
+        requestData.postData({
+            url: "show/wxclass_search",
+            params: {
+                teacher: options.teacher,
+                status: options.status
+            },
+            do_success: function (res) {
+                that.setData({
+                    class_list: res.data
+                })
+            }
+        })
     },
     // 跳转 老师详情页
-    goTeacherDetails(){
+    goTeacherDetails(e){
+        let id = e.currentTarget.dataset.id;
         wx.navigateTo({
-            url: '../teachersDetails/teachersDetails',
+            url: '../teachersDetails/teachersDetails?id='+id,
         })
     },
 

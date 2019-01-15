@@ -23,7 +23,7 @@ const conf = {
                     '当前点击的日期是否有事件标记: ',
                     currentSelect.hasTodo || false
                 );
-                allSelectedDays && console.log('选择的所有日期', allSelectedDays);
+                // allSelectedDays && console.log('选择的所有日期', allSelectedDays);
                 console.log('getSelectedDay方法', getSelectedDay());
             },
             whenChangeMonth(current, next) {
@@ -216,7 +216,7 @@ const conf = {
         let id = e.currentTarget.dataset.id;
         console.log(id)
         wx.navigateTo({
-            url: '../classDetails/classDetails?is_show=show,id='+id,
+            url: '../classDetails/classDetails?,id='+id,
         })
     },
     // 弹出筛选框

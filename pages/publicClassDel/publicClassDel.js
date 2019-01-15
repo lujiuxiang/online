@@ -1,11 +1,13 @@
 // pages/classDetails/classDetails.js
+var requestData = require("../../utils/util.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    video_src: "http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",
+    video_src: "",
+    video_bg: "",
     videoimage: "block", //默认显示封面
     tab_image: "block",//默认显示封面播放按钮
     block: false,
@@ -23,6 +25,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var id = options.id;
     if (options.is_show) {
       this.setData({
         block: true,
@@ -33,6 +37,26 @@ Page({
         block: false
       })
     }
+    console.log(id)
+    // 请求数据
+    requestData.postData({
+        url: "show/wxclass_one",
+        params: {
+            id: id
+        },
+        do_success: function (res) {
+            that.setData({
+                video_src: res.data.spurl,
+                ctime: res.data.ctime,
+                class_title: res.data.title,
+                renqi: res.data.renqi,
+                teacher_del: res.data.xxcontent,
+                video_bg: res.data.xximage
+            })
+        }
+    })
+
+
   },
   //点击播放按钮，封面图片隐藏,播放视频
   bindplay: function (e) {

@@ -7,7 +7,7 @@
         <cover-image src="http://imyu.top/xcx/video_bg.png"  />
     </cover-view>
     <cover-view class="play" style="display:{{tab_image}};z-index:200;">
-        <cover-image bindtap="bindplay" src="http://imyu.top/xcx/video_play.png" style="width:160rpx;" />
+        <cover-image bindtap="bindplay" src="../../images/video_play.png" style="width:160rpx;" />
     </cover-view>
 </view>
 <!-- 顶部视频标签 end -->

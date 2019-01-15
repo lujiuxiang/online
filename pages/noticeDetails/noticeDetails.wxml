@@ -1,6 +1,6 @@
 <!--pages/noticeDetails/noticeDetails.wxml-->
 <view class='container'>
-    <view class='title'>{{list.details}}</view>
-    <view class='time'>{{list.time}}</view>
-    <view class='info'>{{list.info}}</view>
+    <view class='title'>{{list.title}}</view>
+    <view class='time'>{{list.ctime}}</view>
+    <view class='info'>{{list.remark}}</view>
 </view>

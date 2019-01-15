@@ -220,18 +220,8 @@
 /* 公开课堂 end */
 
 /* 平台介绍 start */
-.index_recommend image{
-    width: 100%;
-}
-.index_recommend > view{
-    padding: 10rpx 30rpx;
-}
-.index_recommend .title{
-    font-size: 30rpx;
-    padding-bottom: 10rpx;
-}
-.index_recommend .del{
-    text-indent: 2em;
+.index_recommend{
+    padding: 0 10rpx;
 }
 /* 平台介绍 end */
 

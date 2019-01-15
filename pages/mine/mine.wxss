@@ -20,7 +20,11 @@
     padding-bottom: 16rpx;
 }
 .t_right .vip{
+    display: flex;
     color: #a3a3a3;
+}
+.t_right .vip > view{
+    margin-left: 25rpx;
 }
 .t_right text{
     position: absolute;

@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/tarBar/tarBar",
         "pages/class/class",
         "pages/appointment/appointment",
         "pages/liveLocale/liveLocale",

@@ -1,5 +1,6 @@
 import WxValidate from '../../utils/WxValidate.js'
 let app = getApp();
+let requestData = require("../../utils/util.js")
 
 Page({
 
@@ -15,7 +16,7 @@ Page({
         age: "",
         phone: "",
         idCard: "",
-        referrer: ""
+        parent: ""
     },
 
     //报错 
@@ -62,7 +63,7 @@ Page({
                 required: true,
                 idcard: true
             },
-            referrer: {
+            parent: {
                 required: true,
                 minlength: 2
             },
@@ -102,7 +103,7 @@ Page({
                 required: '请填写身份证号',
                 idcard: "请输入正确的身份证号"
             },
-            referrer: {
+            parent: {
                 required: '请填写推荐人',
                 minlength: '请输入正确的名称'
             },
@@ -110,7 +111,8 @@ Page({
         this.WxValidate = new WxValidate(rules, messages);
     },
     formSubmit: function(e) {
-        console.log('form发生了submit事件，携带数据为：', e.detail.value);
+        let that = this
+        // console.log('form发生了submit事件，携带数据为：', e.detail.value);
         let {
             nickname,
             user,
@@ -120,40 +122,78 @@ Page({
             age,
             phone,
             idcard,
-            referrer
+            parent
         } = e.detail.value;
         // 校验表单
         const params = e.detail.value
 
-        // console.log(params)
         //校验表单
         if (!this.WxValidate.checkForm(params)) {
             const error = this.WxValidate.errorList[0]
             this.showModal(error)
             return false
         }
-
-        this.showModal({
-            msg: '提交成功'
-        })
-
-        this.setData({
-            nickname: nickname,
-            user: user,
-            sex: sex,
-            pass: pass,
-            passAgain: passAgain,
-            age: age,
-            phone: phone,
-            idCard: idcard,
-            referrer: referrer
+        // 注册提交
+        requestData.postData({
+            url: "user/member_bd",
+            params: {
+                openid: getApp().globalData.openid,
+                nickname: nickname,
+                user: user,
+                sex: sex,
+                pass: pass,
+                age: age,
+                phone: phone,
+                idcard: idcard,
+                parent: parent
+            },
+            do_success: function (res) {
+                console.log(res)
+                if(res.data.code != -1){
+                    wx.showModal({
+                        title: '提示',
+                        content: res.data.msg,
+                        confirmText: "去登录",
+                        success: function (res) {
+                            if (res.confirm) {
+                                wx.navigateTo({
+                                    url: '../login/login',
+                                })
+                            } else if (res.cancel) {
+                                // console.log('用户点击取消')
+                            }
+                        }
+                    })
+                }else{
+                    wx.showModal({
+                        title: '提示',
+                        content: res.data.msg,
+                        showCancel: true
+                    })
+                }
+            }
         })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        var that = this
         this.initValidate()
+
+        requestData.postData({
+            url: "user/info",
+            params: {
+                openid: getApp().globalData.openid
+            },
+            do_success: function(res){
+                console.log(res)
+                that.setData({
+                    nickname: res.data.nickname,
+                    sex: res.data.sex
+                })
+            }
+        })
     },
 
     /**

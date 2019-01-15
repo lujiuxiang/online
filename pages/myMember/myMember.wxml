@@ -5,23 +5,10 @@
         <image src='{{my_img}}'></image>
         <view class='right'>
             <view>{{realname}}</view>
-            <view>{{memberType}}</view>
+            <view>{{vip}}</view>
         </view>
     </view>
     <!-- 顶部 我的信息 end -->
-
-    <!-- 会员课程简介 start -->
-    <view class='memberIntro'>
-        <view class='title'>会员课程如何升级</view>
-        <block wx:for="{{why_list}}" wx:key="index">
-            <view class='why_list' data-id='{{item.id}}'>
-                {{item.text}}
-            </view>
-            <view class='result'>答：{{item.result}}</view>
-        </block>
-    </view>
-
-    <!-- 会员课程简介 end -->
 
     <!-- 会员列表 start -->
     <block wx:for="{{list}}" wx:key="index">
@@ -40,9 +27,21 @@
             </view>
             <view class='bot'>
                 <text>专享</text>
-                <view>立即充值</view>
+                <view bindtap='go_pay' data-money="{{item.money}}">立即充值</view>
             </view>
         </view>
     </block>
     <!-- 会员列表 end -->
+
+    <!-- 会员课程简介 start -->
+    <view class='memberIntro'>
+        <view class='title'>常见问题</view>
+        <block wx:for="{{why_list}}" wx:key="index">
+            <view class='why_list' data-id='{{item.id}}'>
+                {{item.ask}}
+            </view>
+            <view class='result'>答：{{item.qus}}</view>
+        </block>
+    </view>
+    <!-- 会员课程简介 end -->
 </view>

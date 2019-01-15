@@ -1,11 +1,12 @@
 // pages/myIntegral/myIntegral.js
+var requestData = require("../../utils/util.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    myMark: "10",
+    myMark: "",
     cj_mark: "20",
     zj_mark: "40",
     gj_mark: "60",
@@ -34,7 +35,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      var that = this
+      requestData.postData({
+          url: "user/info",
+          params: {
+              openid: getApp().globalData.openid
+          },
+          do_success: function(res){
+            that.setData({
+                myMark: res.data.jifen
+            })
+          }
+      })
   },
   // 跳转到课程页面
   goClass(){
